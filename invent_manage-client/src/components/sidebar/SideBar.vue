@@ -19,8 +19,8 @@ const extendMenu = () => {
     <div class="logo">
       <img src="@/assets/logo.png" alt="Vue" />
     </div>
-    <div class="menu-toggle-wrap">
-      <button class="menu-toggle" @click="extendMenu">
+    <div class="toggle__wrapper">
+      <button class="toggle" @click="extendMenu">
         <span class="icons">
           <!-- Display left or right arrow icon based on isExtended value -->
           <template v-if="isExtended">
