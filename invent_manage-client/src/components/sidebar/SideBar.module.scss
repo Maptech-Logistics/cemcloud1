@@ -17,6 +17,7 @@ aside {
     display: flex;
     align-items: center;
     justify-content: center;
+    border-bottom: 0.1rem solid var(--app-lightblue);
 
     img {
       width: 4rem;
@@ -94,6 +95,11 @@ aside {
           .text {
             color: rgba(7, 91, 69, 0.705);
           }
+
+          .icons{
+    animation: wobble 0.5s ease-in-out alternate infinite;
+
+          }
         }
       }
     }
@@ -108,6 +114,19 @@ aside {
     }
   }
 
+  // ANIMATIONS 
+  @keyframes wobble {
+    0% {
+      transform: translateY(-0.3rem);
+    }
+    50% {
+      transform: translateY(0.6rem);
+    }
+    100% {
+      transform: translateY(initial);
+    }
+  }
+  
   // MEDIA QUERIES
 
   @media (max-width: 767px) {

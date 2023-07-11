@@ -23,12 +23,8 @@ const extendMenu = () => {
       <button class="toggle" @click="extendMenu">
         <span class="icons">
           <!-- Display left or right arrow icon based on isExtended value -->
-          <template v-if="isExtended">
-            <SvgIconLeftArrow />
-          </template>
-          <template v-else>
-            <SvgIconRightArrow />
-          </template>
+            <SvgIconLeftArrow v-if="isExtended"/>
+            <SvgIconRightArrow v-else/>
         </span>
       </button>
     </div>
