@@ -1,8 +1,8 @@
 :root {
-  --app-darkblue:#000022;
-  --app-lightblue:#D6F5FF;
-  --app-white:#ffffff;
-  --app-black:black;
+  --app-darkblue: #000022;
+  --app-lightblue: #d6f5ff;
+  --app-white: #ffffff;
+  --app-black: black;
 }
 
 /* semantic color variables for this project */
@@ -10,14 +10,13 @@
   --background-primary: var(--app-white);
   --background-secondary: var(--app-darkblue);
   --color-text-primary: var(--app-black);
-  --color-text-secondary:var(--app-darkblue);
+  --color-text-secondary: var(--app-darkblue);
   --color-border: rgb(23, 26, 37);
   --color-border-hover: var(--app-darkblue);
   --color-heading: var(--app-white);
   --section-gap: 160px;
-  --font-secondary:#fff;
+  --font-secondary: #fff;
 }
-
 
 *,
 *::before,
