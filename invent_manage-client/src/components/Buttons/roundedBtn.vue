@@ -1,21 +1,21 @@
 <template>
-    <button class="rounded-button" @click="handleClick">
-        <slopt>Rounded Button</slopt>
-    </button>
-  </template>
-  
+  <button class="rounded-button" @click="handleClick">
+    <slopt>Rounded Button</slopt>
+  </button>
+</template>
+
 <script>
- export default {
+export default {
   methods: {
     handleClick() {
       //notify the parent component about the button click
-      this.$emit('submit');
+      this.$emit('submit')
     }
   }
 }
 </script>
 
-  <style scoped>
+<style scoped>
 .rounded-button {
   all: unset;
   width: 100px;
@@ -53,5 +53,4 @@
     padding: 0 25px;
   }
 }
-  </style>
-  
+</style>

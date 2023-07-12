@@ -1,7 +1,7 @@
 <template>
   <div class="menu">
     <router-link v-for="link in links" :to="link.to" class="button" :key="link.to">
-      <div class="icons"><component :size="20" :is="link.icon" /> </div>
+      <div class="icons"><component :size="20" :is="link.icon" /></div>
       <span class="text">{{ link.text }}</span>
     </router-link>
   </div>

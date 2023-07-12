@@ -22,6 +22,7 @@ aside {
     display: flex;
     align-items: center;
     justify-content: center;
+    border-bottom: 0.1rem solid var(--app-lightblue);
 
     img {
       width: 3rem;
@@ -87,27 +88,20 @@ aside {
         transition: 0.2s ease-in-out;
       }
 
-      &:hover {
-        // background-color: var(--app-lightblue);
-        // .icons,
-        // .text {
-        //   color: var(--color-text-primary);
-        // }
-      }
-
       &.router-link-exact-active {
         border-right: 4px solid var(--app-lightblue);
         background-color: var(--app-semi);
-        .icons,
-        .text {
-          // color: var(--background-primary);
-        }
+
         &:hover {
-          // background-color: var(--app-lightblue);
-          // .icons,
-          // .text {
-          //   color: rgba(7, 91, 69, 0.705);
-          // }
+          background-color: var(--app-lightblue);
+          .icons,
+          .text {
+            color: rgba(7, 91, 69, 0.705);
+          }
+
+          .icons {
+            animation: wobble 0.5s ease-in-out alternate infinite;
+          }
         }
       }
     }
@@ -119,6 +113,19 @@ aside {
       .text {
         display: flex;
       }
+    }
+  }
+
+  // ANIMATIONS
+  @keyframes wobble {
+    0% {
+      transform: translateY(-0.3rem);
+    }
+    50% {
+      transform: translateY(0.6rem);
+    }
+    100% {
+      transform: translateY(initial);
     }
   }
 

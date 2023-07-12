@@ -1,13 +1,7 @@
 <template lang="">
-    <div>
-        this is the login page
-    </div>
+  <div>this is the login page</div>
 </template>
 <script>
-export default {
-    
-}
+export default {}
 </script>
-<style lang="">
-    
-</style>
+<style lang=""></style>

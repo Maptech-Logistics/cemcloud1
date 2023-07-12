@@ -1,33 +1,34 @@
 <template>
-    <button class="secondary-button" @click="handleClick">
-        <slot>Secondary Button</slot> 
-    </button>
-  </template>
+  <button class="secondary-button" @click="handleClick">
+    <slot>Secondary Button</slot>
+  </button>
+</template>
 
 <script>
-    export default{
-        methods: {
-            handleClick() {
-                //notify the parent component about the button click
-                this.$emit('submit');
-            }
-        }
+export default {
+  methods: {
+    handleClick() {
+      //notify the parent component about the button click
+      this.$emit('submit')
     }
+  }
+}
 </script>
-  
+
 <style scoped>
 .secondary-button {
   width: 100px;
   height: 30px;
   appearance: none;
   background-color: #000000;
-  border: 2px solid #1A1A1A;
+  border: 2px solid #1a1a1a;
   border-radius: 15px;
   box-sizing: border-box;
-  color: #FFFFFF;
+  color: #ffffff;
   cursor: pointer;
   display: inline-block;
-  font-family: Roobert,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+  font-family: Roobert, -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif,
+    'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
   font-size: 16px;
   font-weight: 600;
   line-height: normal;
@@ -38,7 +39,7 @@
   padding: 16px 24px;
   text-align: center;
   text-decoration: none;
-  transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+  transition: all 300ms cubic-bezier(0.23, 1, 0.32, 1);
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
@@ -59,5 +60,4 @@
   box-shadow: none;
   transform: translateY(0);
 }
-  </style>
-  
+</style>

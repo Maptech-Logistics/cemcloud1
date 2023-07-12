@@ -19,14 +19,13 @@ export default {
       dialogTitle: 'Edit Item ',
       email: ''
     }
-  },
+  }
 
   // methods: {
   //   toggleDialog() {
   //     this.isOpen = !this.isOpen
   //   }
   // },
-
 }
 </script>
 <style></style>

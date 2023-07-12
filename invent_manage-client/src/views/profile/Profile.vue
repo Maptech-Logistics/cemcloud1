@@ -1,13 +1,7 @@
 <template lang="">
-    <h2>
-        This is the profile page
-    </h2>
+  <h2>This is the profile page</h2>
 </template>
 <script>
-export default {
-    
-}
+export default {}
 </script>
-<style lang="">
-    
-</style>
+<style lang=""></style>
