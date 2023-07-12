@@ -15,6 +15,7 @@
           >
             {{ headName }}
           </th>
+          
         </tr>
       </thead>
       <tbody>
@@ -41,17 +42,16 @@
 
 <script setup lang="ts">
 import { ref } from 'vue'
-import {formatTimeAgo} from '@/utils/functions'
-
+import { formatTimeAgo } from '@/utils/functions'
 
 interface TableData {
   name: string
-  batch_number:string
+  batch_number: string
   quantity: number
   status: 'in-stock' | 'out-of-stock'
   category: string
   shelf_location: string
-  last_updated:Date
+  last_updated: Date
   cost_per_unit: number
   buttons?: any
 }
@@ -73,9 +73,8 @@ const setCol = (index: number): void => {
 
 <style scoped lang="scss">
 @import './table.module.scss';
-.action-btns{
+.action-btns {
   display: flex;
   justify-content: space-around;
 }
-
 </style>
