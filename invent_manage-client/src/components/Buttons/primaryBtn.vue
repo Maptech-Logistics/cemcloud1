@@ -1,20 +1,19 @@
 <template>
-    <button class="primary-button" @click="handleClick">
-        <slot>Primary Button</slot>
-    </button>
-  </template>
-  
+  <button class="primary-button" @click="handleClick">
+    <slot>Primary Button</slot>
+  </button>
+</template>
+
 <script>
- export default {
+export default {
   methods: {
     handleClick() {
       //notify the parent component about the button click
-      this.$emit('submit');
+      this.$emit('submit')
     }
   }
 }
 </script>
-
 
 <style scoped>
 .primary-button {
@@ -45,7 +44,7 @@
   bottom: 0;
   right: 0;
   z-index: -99999;
-  transition: all .4s;
+  transition: all 0.4s;
 }
 
 .primary-button::before {
@@ -84,4 +83,3 @@
   transform: translate(0, 5%);
 }
 </style>
-  

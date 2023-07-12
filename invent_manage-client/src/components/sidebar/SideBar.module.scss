@@ -42,9 +42,9 @@ aside {
       &:hover {
         .icons {
           color: rgba(152, 235, 241, 0.672);
-         svg{
-          transform: translateX(0.25rem);
-         }
+          svg {
+            transform: translateX(0.25rem);
+          }
         }
       }
     }
@@ -96,9 +96,8 @@ aside {
             color: rgba(7, 91, 69, 0.705);
           }
 
-          .icons{
-    animation: wobble 0.5s ease-in-out alternate infinite;
-
+          .icons {
+            animation: wobble 0.5s ease-in-out alternate infinite;
           }
         }
       }
@@ -114,7 +113,7 @@ aside {
     }
   }
 
-  // ANIMATIONS 
+  // ANIMATIONS
   @keyframes wobble {
     0% {
       transform: translateY(-0.3rem);
@@ -126,7 +125,7 @@ aside {
       transform: translateY(initial);
     }
   }
-  
+
   // MEDIA QUERIES
 
   @media (max-width: 767px) {

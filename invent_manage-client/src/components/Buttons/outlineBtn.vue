@@ -1,21 +1,21 @@
 <template>
-    <button class="outline-button" @click="handleClick">
-        <slot>Outline Button</slot>
-    </button>
-  </template>
+  <button class="outline-button" @click="handleClick">
+    <slot>Outline Button</slot>
+  </button>
+</template>
 
 <script>
- export default {
+export default {
   methods: {
     handleClick() {
       //notify the parent component about the button click
-      this.$emit('submit');
+      this.$emit('submit')
     }
   }
 }
 </script>
-  
-  <style scoped>
+
+<style scoped>
 .outline-button {
   all: unset;
   width: 100px;
@@ -28,7 +28,7 @@
   border-radius: 15px 225px 255px 15px 15px 255px 225px 15px;
   border-style: solid;
   border-width: 2px;
-  box-shadow: rgba(0, 0, 0, .2) 15px 28px 25px -18px;
+  box-shadow: rgba(0, 0, 0, 0.2) 15px 28px 25px -18px;
   box-sizing: border-box;
   color: #41403e;
   cursor: pointer;
@@ -37,7 +37,7 @@
   font-size: 1rem;
   line-height: 23px;
   outline: none;
-  padding: .75rem;
+  padding: 0.75rem;
   text-decoration: none;
   transition: all 235ms ease-in-out;
   border-bottom-left-radius: 15px 255px;
@@ -50,12 +50,11 @@
 }
 
 .outline-button:hover {
-  box-shadow: rgba(0, 0, 0, .3) 2px 8px 8px -5px;
+  box-shadow: rgba(0, 0, 0, 0.3) 2px 8px 8px -5px;
   transform: translate3d(0, 2px, 0);
 }
 
 .outline-button:focus {
-  box-shadow: rgba(0, 0, 0, .3) 2px 8px 4px -6px;
+  box-shadow: rgba(0, 0, 0, 0.3) 2px 8px 4px -6px;
 }
-  </style>
-  
+</style>

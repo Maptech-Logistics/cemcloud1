@@ -1,13 +1,16 @@
-<template lang="">
-    <h2>
-        This is the dashboard
-    </h2>
-</template>
-<script>
-export default {
-    
-}
+<script setup lang="ts">
+import Inventory from '@/components/inventory/Inventory.vue'
 </script>
-<style lang="">
-    
+
+<template lang="">
+  <main>
+    <!-- <h2>This is the dashboard</h2> -->
+    <inventory />
+  </main>
+</template>
+
+<style lang="scss" scoped>
+main {
+  display: flex;
+}
 </style>
