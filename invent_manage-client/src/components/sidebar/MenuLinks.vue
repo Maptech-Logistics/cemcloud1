@@ -8,11 +8,7 @@
 </template>
 
 <script setup lang="ts">
-interface Link {
-  to: string
-  icon: any
-  text: string
-}
+import type { Link } from '@/types/types';
 
 const props = defineProps({
   links: {

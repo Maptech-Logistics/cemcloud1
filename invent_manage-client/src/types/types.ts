@@ -15,3 +15,10 @@ export type TableData = {
   cost_per_unit: number
   buttons?: any
 }
+
+
+export type TableProps = {
+  headers: string[]
+  body: TableData[]
+  sortColumn: (headName: string) => void
+}

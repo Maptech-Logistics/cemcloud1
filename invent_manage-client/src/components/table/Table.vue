@@ -43,27 +43,10 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import { formatTimeAgo } from '@/utils/functions'
+import type{ TableProps } from '@/types/types';
 
-interface TableData {
-  name: string
-  batch_number: string
-  quantity: number
-  status: 'in-stock' | 'out-of-stock'
-  category: string
-  shelf_location: string
-  last_updated: Date
-  cost_per_unit: number
-  buttons?: any
-}
 
-interface Props {
-  headers: string[]
-  body: TableData[]
-  sortColumn: (headName: string) => void
-}
-
-const props = defineProps<Props>()
-
+const props = defineProps<TableProps>()
 const col = ref(0)
 
 const setCol = (index: number): void => {
