@@ -12,6 +12,11 @@ aside {
   .flex {
     flex: 1 1 0;
   }
+  .sidebar_header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+  }
 
   .logo {
     display: flex;
@@ -19,7 +24,7 @@ aside {
     justify-content: center;
 
     img {
-      width: 4rem;
+      width: 3rem;
     }
   }
 
@@ -31,19 +36,20 @@ aside {
     .toggle {
       background-color: transparent;
       border: 0;
+      padding: 0;
       cursor: pointer;
 
       .icons {
-        color: var(--app-lightblue);
+        color: var(--app-white);
         transition: 0.2s ease-out;
       }
 
       &:hover {
         .icons {
           color: rgba(152, 235, 241, 0.672);
-         svg{
-          transform: translateX(0.25rem);
-         }
+          svg {
+            transform: translateX(0.25rem);
+          }
         }
       }
     }
@@ -56,51 +62,59 @@ aside {
 
     .button {
       display: flex;
-      place-items: center;
+      align-items: center;
+      justify-content: start;
       text-decoration: none;
       transition: 0.2s ease-in-out;
-      padding: 0.5rem;
+      padding: 0.6rem 1.1rem;
+      // margin-bottom: 0.5rem;
 
       .icons {
-        font-size: 2rem;
-        color: var(--app-lightblue);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+        height: auto;
+        color: var(--app-white);
         transition: 0.2s ease-in-out;
         padding-right: 1rem;
       }
 
       .text {
+        font-size: 16px;
         display: none;
         color: var(--app-white);
         transition: 0.2s ease-in-out;
       }
 
       &:hover {
-        background-color: var(--app-lightblue);
-        .icons,
-        .text {
-          color: var(--color-text-primary);
-        }
+        // background-color: var(--app-lightblue);
+        // .icons,
+        // .text {
+        //   color: var(--color-text-primary);
+        // }
       }
 
       &.router-link-exact-active {
-        border-right: 5px solid var(--app-lightblue);
+        border-right: 4px solid var(--app-lightblue);
+        background-color: var(--app-semi);
         .icons,
         .text {
-          color: var(--background-primary);
+          // color: var(--background-primary);
         }
         &:hover {
-          background-color: var(--app-lightblue);
-          .icons,
-          .text {
-            color: rgba(7, 91, 69, 0.705);
-          }
+          // background-color: var(--app-lightblue);
+          // .icons,
+          // .text {
+          //   color: rgba(7, 91, 69, 0.705);
+          // }
         }
       }
     }
   }
 
   &.is_extended {
-    width: 10rem;
+    width: 12rem;
     .menu {
       .text {
         display: flex;
