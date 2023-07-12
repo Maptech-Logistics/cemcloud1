@@ -10,8 +10,8 @@ declare module 'vue' {
     AboutView: typeof import('./src/views/AboutView.vue')['default']
     Analytics: typeof import('./src/views/analytics/Analytics.vue')['default']
     AnalyticsIcon: typeof import('./src/components/icons/AnalyticsIcon.vue')['default']
+    Chart: typeof import('./src/components/visual-summary/Chart.vue')['default']
     Dashboard: typeof import('./src/views/dashboard/Dashboard.vue')['default']
-    DashBoard: typeof import('./src/views/dashboard/DashBoard.vue')['default']
     DashboardIcon: typeof import('./src/components/icons/DashboardIcon.vue')['default']
     DeleteIcon: typeof import('./src/components/icons/DeleteIcon.vue')['default']
     DiaLog: typeof import('./src/components/dialog/DiaLog.vue')['default']
@@ -23,7 +23,6 @@ declare module 'vue' {
     IconSupport: typeof import('./src/components/icons/IconSupport.vue')['default']
     Inventory: typeof import('./src/components/inventory/Inventory.vue')['default']
     LeftArrow: typeof import('./src/components/icons/LeftArrow.vue')['default']
-    Login: typeof import('./src/views/auth/Login.vue')['default']
     LogIn: typeof import('./src/views/auth/LogIn.vue')['default']
     LogoutIcon: typeof import('./src/components/icons/LogoutIcon.vue')['default']
     MenuLinks: typeof import('./src/components/sidebar/MenuLinks.vue')['default']
@@ -39,6 +38,5 @@ declare module 'vue' {
     SideBar: typeof import('./src/components/sidebar/SideBar.vue')['default']
     SpinnerIcon: typeof import('./src/components/icons/SpinnerIcon.vue')['default']
     Table: typeof import('./src/components/table/Table.vue')['default']
-    Test: typeof import('./src/components/table/Test.vue')['default']
   }
 }
