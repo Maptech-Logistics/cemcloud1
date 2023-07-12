@@ -28,7 +28,11 @@
           <td>{{ data.shelf_location }}</td>
           <td>{{ formatTimeAgo(data.last_updated) }}</td>
           <td>{{ data.cost_per_unit }}</td>
-          <td component :is="data.buttons!">{{ data.buttons ?? data.buttons }}</td>
+          <td class="action-btns">
+            <edit-icon />
+            <delete-icon />
+          </td>
+          <!-- <td><component :size="20" :is="data.buttons!"  /></td> -->
         </tr>
       </tbody>
     </table>
@@ -69,4 +73,9 @@ const setCol = (index: number): void => {
 
 <style scoped lang="scss">
 @import './table.module.scss';
+.action-btns{
+  display: flex;
+  justify-content: space-around;
+}
+
 </style>

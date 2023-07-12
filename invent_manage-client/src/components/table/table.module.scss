@@ -20,9 +20,12 @@ td {
   text-align: center;
   padding: 0.8rem;
 
-  &:last-child {
-    color: var(--gradient-green);
-    font-weight: 600;
+  .edit{
+    color: green;
+  }
+
+  .delete {
+    color: red;
   }
 }
 

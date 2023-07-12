@@ -33,7 +33,7 @@ const dummyData: TableData[] = [
     shelf_location: "A1",
     last_updated: new Date("2023-07-11"),
     cost_per_unit: 0.5,
-    buttons: EditIcon
+    // buttons: EditIcon
   },
   {
     name: "Bananas",
@@ -44,7 +44,7 @@ const dummyData: TableData[] = [
     shelf_location: "B3",
     last_updated: new Date("2023-07-10"),
     cost_per_unit: 0.3,
-    buttons: "Edit,Delete"
+    // buttons: "Edit,Delete"
   },
   {
     name: "Milk",
@@ -55,7 +55,7 @@ const dummyData: TableData[] = [
     shelf_location: "C2",
     last_updated: new Date("2023-07-11"),
     cost_per_unit: 1.2,
-    buttons: "Edit,Delete"
+    // buttons: "Edit,Delete"
   },
   {
     name: "Bread",
@@ -66,7 +66,7 @@ const dummyData: TableData[] = [
     shelf_location: "D4",
     last_updated: new Date("2023-07-09"),
     cost_per_unit: 2.5,
-    buttons: "Edit,Delete"
+    // buttons: "Edit,Delete"
   },
   {
     name: "Cereal",
@@ -77,7 +77,7 @@ const dummyData: TableData[] = [
     shelf_location: "E1",
     last_updated: new Date("2023-07-11"),
     cost_per_unit: 3.0,
-    buttons: "Edit,Delete"
+    // buttons: "Edit,Delete"
   },
   {
     name: "Water Bottles",
@@ -88,7 +88,7 @@ const dummyData: TableData[] = [
     shelf_location: "F2",
     last_updated: new Date("2023-07-10"),
     cost_per_unit: 0.8,
-    buttons: "Edit,Delete"
+    // buttons: "Edit,Delete"
   },
   {
     name: "Paper Towels",
@@ -99,7 +99,7 @@ const dummyData: TableData[] = [
     shelf_location: "G3",
     last_updated: new Date("2023-07-09"),
     cost_per_unit: 1.5,
-    buttons: "Edit,Delete"
+    // buttons: "Edit,Delete"
   },
   {
     name: "Toothpaste",
@@ -110,7 +110,7 @@ const dummyData: TableData[] = [
     shelf_location: "H2",
     last_updated: new Date("2023-07-11"),
     cost_per_unit: 2.0,
-    buttons: "Edit,Delete"
+    // buttons: "Edit,Delete"
   }
 ];
 

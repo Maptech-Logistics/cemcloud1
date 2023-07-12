@@ -88,23 +88,11 @@ aside {
         transition: 0.2s ease-in-out;
       }
 
-      &:hover {
-        // background-color: var(--app-lightblue);
-        // .icons,
-        // .text {
-        //   color: var(--color-text-primary);
-        // }
-      }
-
       &.router-link-exact-active {
         border-right: 4px solid var(--app-lightblue);
         background-color: var(--app-semi);
-        .icons,
-        .text {
-          // color: var(--background-primary);
-        }
+  
         &:hover {
-<<<<<<< HEAD
           background-color: var(--app-lightblue);
           .icons,
           .text {
@@ -114,13 +102,6 @@ aside {
           .icons {
             animation: wobble 0.5s ease-in-out alternate infinite;
           }
-=======
-          // background-color: var(--app-lightblue);
-          // .icons,
-          // .text {
-          //   color: rgba(7, 91, 69, 0.705);
-          // }
->>>>>>> 49753d8609914bc49955d45938c879ae35167e6e
         }
       }
     }
