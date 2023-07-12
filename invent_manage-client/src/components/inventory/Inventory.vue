@@ -7,23 +7,7 @@
 <script setup lang="ts">
 import Table from '../table/Table.vue'
 import { headers, dummyData } from '@/utils/dummydata'
-
-interface TableData {
-  name: string
-  batch_number: string
-  quantity: number
-  status: 'in-stock' | 'out-of-stock'
-  category: string
-  shelf_location: string
-  last_updated: Date
-  cost_per_unit: number
-  buttons?: any
-}
-
-const sortColumn = (headName: string): void => {
-  // Logic for sorting the table by the selected column
-  // will be implemented in utils/functions.ts
-}
+import {sortColumn} from '@/utils/functions'
 </script>
 
 <style lang="scss" scoped>
