@@ -14,9 +14,5 @@ import {sortColumn} from '@/utils/functions'
 .table__parent {
   display: flex;
   flex-flow: column;
-  align-items: center;
-  padding: 2rem;
-  overflow-y: auto;
-  overflow-x: hidden;
 }
 </style>

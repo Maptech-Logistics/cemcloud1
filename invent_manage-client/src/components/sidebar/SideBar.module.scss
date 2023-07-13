@@ -1,4 +1,6 @@
 aside {
+  position:absolute;
+  left: 0;
   display: flex;
   flex-direction: column;
   background-color: var(--background-secondary);
@@ -131,37 +133,4 @@ aside {
 
   // MEDIA QUERIES
 
-  @media (max-width: 767px) {
-    flex-direction: row;
-    min-height: auto;
-    height: 56px;
-    padding: 0.5rem;
-    width: 100%;
-
-    &.is_extended {
-      width: 100vw;
-
-      .menu {
-        .text {
-          display: none;
-        }
-      }
-    }
-
-    .toggle__wrapper {
-      display: none;
-    }
-
-    .menu {
-      justify-content: space-between;
-      margin: 0;
-      padding: 0;
-
-      .button {
-        flex-direction: column;
-        padding: 0.25rem;
-        text-align: center;
-      }
-    }
-  }
 }

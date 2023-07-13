@@ -13,7 +13,10 @@ export const headers = [
   'Actions'
 ]
 
-export const dummyData: TableData[] = [
+
+
+
+export const dummyData: TableData[] =[
   {
     name: 'Apples',
     batch_number: 'A123',
@@ -23,6 +26,50 @@ export const dummyData: TableData[] = [
     shelf_location: 'A1',
     last_updated: new Date('2023-07-11'),
     cost_per_unit: 0.5
+    // buttons: EditIcon
+  }, 
+  {
+    name: 'Oranges',
+    batch_number: 'A124',
+    quantity: 150,
+    status: 'in-stock',
+    category: 'Fruits',
+    shelf_location: 'A2',
+    last_updated: new Date('2023-07-12'),
+    cost_per_unit: 0.6
+    // buttons: EditIcon
+  }, 
+  {
+    name: 'Grapes',
+    batch_number: 'A125',
+    quantity: 200,
+    status: 'in-stock',
+    category: 'Fruits',
+    shelf_location: 'A3',
+    last_updated: new Date('2023-07-13'),
+    cost_per_unit: 0.7
+    // buttons: EditIcon
+  }, 
+  {
+    name: 'Pears',
+    batch_number: 'A126',
+    quantity: 250,
+    status: 'in-stock',
+    category: 'Fruits',
+    shelf_location: 'A4',
+    last_updated: new Date('2023-07-14'),
+    cost_per_unit: 0.8
+    // buttons: EditIcon
+  },
+  {
+    name: 'Watermelons',
+    batch_number: 'A127',
+    quantity: 300,
+    status: 'in-stock',
+    category: 'Fruits',
+    shelf_location: 'A5',
+    last_updated: new Date('2023-07-15'),
+    cost_per_unit: 0.9
     // buttons: EditIcon
   },
   {
@@ -101,5 +148,29 @@ export const dummyData: TableData[] = [
     last_updated: new Date('2023-07-11'),
     cost_per_unit: 2.0
     // buttons: "Edit,Delete"
+  },
+  {
+    name: 'Strawberries',
+    batch_number: 'I567',
+    quantity: 350,
+    status: 'in-stock',
+    category: 'Fruits',
+    shelf_location: 'I6',
+    last_updated: new Date('2023-07-16'),
+    cost_per_unit: 1.0
+    // buttons: EditIcon
+  },
+  {
+    name: 'Blueberries',
+    batch_number: 'J890',
+    quantity: 400,
+    status: 'in-stock',
+    category: 'Fruits',
+    shelf_location: 'J7',
+    last_updated: new Date('2023-07-17'),
+    cost_per_unit: 1.1
+    // buttons: EditIcon
   }
-]
+];
+
+

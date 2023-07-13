@@ -2,7 +2,6 @@
 import { RouterView } from 'vue-router'
 import SideBar from './components/sidebar/SideBar.vue'
 import { PiniaVuePlugin } from 'pinia'
-import Chart from './components/visual-summary/Chart.vue'
 
 
 </script>
@@ -12,7 +11,6 @@ import Chart from './components/visual-summary/Chart.vue'
     <SideBar />
     <div>
       <RouterView />
-      <Chart />
     </div>
     
   </main>
@@ -22,6 +20,8 @@ import Chart from './components/visual-summary/Chart.vue'
 <style scoped lang="scss">
 main {
   display: flex;
+  overflow: hidden;
+
 }
 
 @media (max-width: 767px) {
@@ -29,7 +29,6 @@ main {
     flex-direction: column;
     justify-content: flex-end;
     height: 100vh;
-    overflow: hidden;
   }
 }
 </style>
