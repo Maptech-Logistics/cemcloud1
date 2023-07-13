@@ -2,8 +2,6 @@
 import { RouterView } from 'vue-router'
 import SideBar from './components/sidebar/SideBar.vue'
 import { PiniaVuePlugin } from 'pinia'
-
-
 </script>
 
 <template>
@@ -11,7 +9,6 @@ import { PiniaVuePlugin } from 'pinia'
     <SideBar />
     <div class="routes">
       <RouterView />
-
     </div>
   </main>
 </template>
@@ -21,9 +18,9 @@ main {
   display: flex;
   overflow: hidden;
 
-.routes {
-  flex-grow: 1; /* Allow RouterView to expand and occupy available space */
-}
+  .routes {
+    flex-grow: 1; /* Allow RouterView to expand and occupy available space */
+  }
 }
 
 @media (max-width: 767px) {

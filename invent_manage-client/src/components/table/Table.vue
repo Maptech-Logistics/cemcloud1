@@ -15,7 +15,7 @@
           >
             {{ headName }}
           </th>
-          
+
         </tr>
       </thead>
       <tbody>
@@ -43,8 +43,7 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import { formatTimeAgo } from '@/utils/functions'
-import type{ TableProps } from '@/types/types';
-
+import type { TableProps } from '@/types/types'
 
 const props = defineProps<TableProps>()
 const col = ref(0)

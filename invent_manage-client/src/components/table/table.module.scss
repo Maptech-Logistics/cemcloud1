@@ -43,17 +43,18 @@ td .delete {
 /* Responsive Styles */
 @media screen and (max-width: 768px) {
   .tableWrapper table {
-    font-size: 1.0rem;
+    font-size: 1rem;
   }
-  
-  th, td {
+
+  th,
+  td {
     padding: 0.6rem;
   }
-  
+
   th {
     font-size: 0.9rem;
   }
-  
+
   td {
     font-size: 0.8rem;
   }

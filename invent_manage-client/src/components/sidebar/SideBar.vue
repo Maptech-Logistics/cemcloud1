@@ -16,7 +16,6 @@ const extendMenu = () => {
 
 <template lang="">
   <aside :class="`${isExtended ? 'is_extended' : ' '}`">
-    
     <div class="logo">
       <img src="@/assets/logo.png" alt="Vue" />
     </div>

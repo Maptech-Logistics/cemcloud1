@@ -16,7 +16,6 @@ export type TableData = {
   buttons?: any
 }
 
-
 export type TableProps = {
   headers: string[]
   body: TableData[]

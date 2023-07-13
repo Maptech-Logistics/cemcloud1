@@ -21,7 +21,7 @@ import Inventory from '@/components/inventory/Inventory.vue'
 </template>
 
 <style lang="scss" scoped>
-section{
+section {
   position: absolute;
   left: 12rem;
   display: flex;
@@ -29,19 +29,18 @@ section{
   flex-flow: column;
   width: 90%;
   height: 100vh;
-  .stat__wrapper{
+  .stat__wrapper {
     display: flex;
     flex-wrap: wrap;
     flex-basis: 1;
     background-color: rgba(219, 237, 238, 0.266);
     margin: 1rem;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-
   }
 
-  .inventory__wrapper{
-    display:flex;
-    justify-content:space-around;
+  .inventory__wrapper {
+    display: flex;
+    justify-content: space-around;
     overflow: scroll;
   }
 }

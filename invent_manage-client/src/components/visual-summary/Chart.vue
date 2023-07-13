@@ -34,16 +34,14 @@ export default {
   },
   data() {
     return {
-      data:
-      {
+      data: {
         labels: nameList,
         datasets: [{ data: quantityList, backgroundColor: '#3e95cd' }]
-      }
-      ,
+      },
       options: {
         responsive: true
       }
     }
-  },
+  }
 }
 </script>

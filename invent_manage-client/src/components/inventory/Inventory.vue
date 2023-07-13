@@ -7,7 +7,7 @@
 <script setup lang="ts">
 import Table from '../table/Table.vue'
 import { headers, dummyData } from '@/utils/dummydata'
-import {sortColumn} from '@/utils/functions'
+import { sortColumn } from '@/utils/functions'
 </script>
 
 <style lang="scss" scoped>

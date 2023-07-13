@@ -4,7 +4,6 @@ import SvgAnalyticsIcon from '@/components/icons/AnalyticsIcon.vue'
 import SvgProfileIcon from '@/components/icons/ProfileIcon.vue'
 import type { Link } from '@/types/types'
 
-
 export const navLinks: Link[] = [
   { to: '/', icon: SvgHomeIcon, text: 'Home' },
   { to: '/dashboard', icon: SvgDashboardIcon, text: 'Dashboard' },
