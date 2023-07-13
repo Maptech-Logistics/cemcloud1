@@ -1,13 +1,20 @@
 <script setup lang="ts">
 import { RouterView } from 'vue-router'
 import SideBar from './components/sidebar/SideBar.vue'
+import { PiniaVuePlugin } from 'pinia'
+
+
 </script>
 
 <template>
   <main>
     <SideBar />
-    <RouterView />
+    <div>
+      <RouterView />
+    </div>
+    
   </main>
+
 </template>
 
 <style scoped lang="scss">
