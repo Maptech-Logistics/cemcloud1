@@ -1,16 +1,31 @@
-<script setup lang="ts">
-import Inventory from '@/components/inventory/Inventory.vue'
-</script>
-
 <template lang="">
-  <main>
-    <!-- <h2>This is the dashboard</h2> -->
-    <inventory />
-  </main>
+  <!-- <DiaLog :title="dialogTitle" v-show="isOpen" @toggle-dialog="toggleDialog">
+    <template v-slot:content>
+      <div style="display: flex; flex-direction: column; width: 100%">
+        <input />
+        <br />
+        <input />
+      </div>
+    </template>
+  </DiaLog> -->
+  <h2>This is dashboard</h2>
 </template>
+<script>
+// import DiaLog from '@/components/dialog/DiaLog.vue'
+export default {
+  data() {
+    return {
+      isOpen: true,
+      dialogTitle: 'Edit Item ',
+      email: ''
+    }
+  }
 
-<style lang="scss" scoped>
-main {
-  display: flex;
+  // methods: {
+  //   toggleDialog() {
+  //     this.isOpen = !this.isOpen
+  //   }
+  // },
 }
-</style>
+</script>
+<style></style>

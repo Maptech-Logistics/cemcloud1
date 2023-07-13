@@ -2,7 +2,6 @@
 import { RouterView } from 'vue-router'
 import SideBar from './components/sidebar/SideBar.vue'
 import { PiniaVuePlugin } from 'pinia'
-import Chart from './components/visual-summary/Chart.vue'
 
 
 </script>
@@ -10,11 +9,7 @@ import Chart from './components/visual-summary/Chart.vue'
 <template>
   <main>
     <SideBar />
-    <div>
-      <RouterView />
-      <Chart />
-    </div>
-    
+    <RouterView />
   </main>
 
 </template>

@@ -11,7 +11,7 @@ declare module 'vue' {
     Analytics: typeof import('./src/views/analytics/Analytics.vue')['default']
     AnalyticsIcon: typeof import('./src/components/icons/AnalyticsIcon.vue')['default']
     Chart: typeof import('./src/components/visual-summary/Chart.vue')['default']
-    Dashboard: typeof import('./src/views/dashboard/Dashboard.vue')['default']
+    DashBoard: typeof import('./src/views/dashboard/DashBoard.vue')['default']
     DashboardIcon: typeof import('./src/components/icons/DashboardIcon.vue')['default']
     DeleteIcon: typeof import('./src/components/icons/DeleteIcon.vue')['default']
     DiaLog: typeof import('./src/components/dialog/DiaLog.vue')['default']
