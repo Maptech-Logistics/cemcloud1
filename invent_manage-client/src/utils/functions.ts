@@ -7,5 +7,10 @@ export const formatTimeAgo = (lastUpdated: Date): string => {
 }
 
 // sorting util function
+export const sortColumn = (headName: string): void => {
+  // Logic for sorting the table by the selected column
+  
+}
+
 
 // filtering util function
