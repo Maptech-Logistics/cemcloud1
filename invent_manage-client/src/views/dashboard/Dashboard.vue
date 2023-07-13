@@ -5,7 +5,7 @@ import Inventory from '@/components/inventory/Inventory.vue'
 <template lang="">
   <section>
     <!-- <h2>This is the dashboard</h2> -->
-    <div class="stat__wrapper">
+    <!-- <div class="stat__wrapper">
       <card />
       <card />
       <card />
@@ -13,7 +13,7 @@ import Inventory from '@/components/inventory/Inventory.vue'
       <card />
       <card />
       
-    </div>
+    </div> -->
     <div class="inventory__wrapper">
       <inventory />
     </div>
@@ -22,8 +22,8 @@ import Inventory from '@/components/inventory/Inventory.vue'
 
 <style lang="scss" scoped>
 section{
-  // position: absolute;
-  margin-left: 12rem;
+  position: absolute;
+  left: 12rem;
   display: flex;
   justify-content: center;
   flex-flow: column;
@@ -40,7 +40,8 @@ section{
   }
 
   .inventory__wrapper{
-    display:grid;
+    display:flex;
+    justify-content:space-around;
     overflow: scroll;
   }
 }

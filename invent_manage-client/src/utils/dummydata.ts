@@ -171,6 +171,205 @@ export const dummyData: TableData[] =[
     cost_per_unit: 1.1
     // buttons: EditIcon
   }
+  ,
+  {
+    name: 'Toothpaste',
+    batch_number: 'H234',
+    quantity: 10,
+    status: 'in-stock',
+    category: 'Personal Care',
+    shelf_location: 'H2',
+    last_updated: new Date('2023-07-11'),
+    cost_per_unit: 2.0
+    // buttons: "Edit,Delete"
+  },
+  {
+    name: 'Strawberries',
+    batch_number: 'I567',
+    quantity: 350,
+    status: 'in-stock',
+    category: 'Fruits',
+    shelf_location: 'I6',
+    last_updated: new Date('2023-07-16'),
+    cost_per_unit: 1.0
+    // buttons: EditIcon
+  },
+  {
+    name: 'Blueberries',
+    batch_number: 'J890',
+    quantity: 400,
+    status: 'in-stock',
+    category: 'Fruits',
+    shelf_location: 'J7',
+    last_updated: new Date('2023-07-17'),
+    cost_per_unit: 1.1
+    // buttons: EditIcon
+  },
+  {
+    name: 'Toothpaste',
+    batch_number: 'H234',
+    quantity: 10,
+    status: 'in-stock',
+    category: 'Personal Care',
+    shelf_location: 'H2',
+    last_updated: new Date('2023-07-11'),
+    cost_per_unit: 2.0
+    // buttons: "Edit,Delete"
+  },
+  {
+    name: 'Strawberries',
+    batch_number: 'I567',
+    quantity: 350,
+    status: 'in-stock',
+    category: 'Fruits',
+    shelf_location: 'I6',
+    last_updated: new Date('2023-07-16'),
+    cost_per_unit: 1.0
+    // buttons: EditIcon
+  },
+  {
+    name: 'Blueberries',
+    batch_number: 'J890',
+    quantity: 400,
+    status: 'in-stock',
+    category: 'Fruits',
+    shelf_location: 'J7',
+    last_updated: new Date('2023-07-17'),
+    cost_per_unit: 1.1
+    // buttons: EditIcon
+  },
+  {
+    name: 'Toothpaste',
+    batch_number: 'H234',
+    quantity: 10,
+    status: 'in-stock',
+    category: 'Personal Care',
+    shelf_location: 'H2',
+    last_updated: new Date('2023-07-11'),
+    cost_per_unit: 2.0
+    // buttons: "Edit,Delete"
+  },
+  {
+    name: 'Strawberries',
+    batch_number: 'I567',
+    quantity: 350,
+    status: 'in-stock',
+    category: 'Fruits',
+    shelf_location: 'I6',
+    last_updated: new Date('2023-07-16'),
+    cost_per_unit: 1.0
+    // buttons: EditIcon
+  },
+  {
+    name: 'Blueberries',
+    batch_number: 'J890',
+    quantity: 400,
+    status: 'in-stock',
+    category: 'Fruits',
+    shelf_location: 'J7',
+    last_updated: new Date('2023-07-17'),
+    cost_per_unit: 1.1
+    // buttons: EditIcon
+  },
+  {
+    name: 'Toothpaste',
+    batch_number: 'H234',
+    quantity: 10,
+    status: 'in-stock',
+    category: 'Personal Care',
+    shelf_location: 'H2',
+    last_updated: new Date('2023-07-11'),
+    cost_per_unit: 2.0
+    // buttons: "Edit,Delete"
+  },
+  {
+    name: 'Strawberries',
+    batch_number: 'I567',
+    quantity: 350,
+    status: 'in-stock',
+    category: 'Fruits',
+    shelf_location: 'I6',
+    last_updated: new Date('2023-07-16'),
+    cost_per_unit: 1.0
+    // buttons: EditIcon
+  },
+  {
+    name: 'Blueberries',
+    batch_number: 'J890',
+    quantity: 400,
+    status: 'in-stock',
+    category: 'Fruits',
+    shelf_location: 'J7',
+    last_updated: new Date('2023-07-17'),
+    cost_per_unit: 1.1
+    // buttons: EditIcon
+  },
+  {
+    name: 'Toothpaste',
+    batch_number: 'H234',
+    quantity: 10,
+    status: 'in-stock',
+    category: 'Personal Care',
+    shelf_location: 'H2',
+    last_updated: new Date('2023-07-11'),
+    cost_per_unit: 2.0
+    // buttons: "Edit,Delete"
+  },
+  {
+    name: 'Strawberries',
+    batch_number: 'I567',
+    quantity: 350,
+    status: 'in-stock',
+    category: 'Fruits',
+    shelf_location: 'I6',
+    last_updated: new Date('2023-07-16'),
+    cost_per_unit: 1.0
+    // buttons: EditIcon
+  },
+  {
+    name: 'Blueberries',
+    batch_number: 'J890',
+    quantity: 400,
+    status: 'in-stock',
+    category: 'Fruits',
+    shelf_location: 'J7',
+    last_updated: new Date('2023-07-17'),
+    cost_per_unit: 1.1
+    // buttons: EditIcon
+  },
+  {
+    name: 'Toothpaste',
+    batch_number: 'H234',
+    quantity: 10,
+    status: 'in-stock',
+    category: 'Personal Care',
+    shelf_location: 'H2',
+    last_updated: new Date('2023-07-11'),
+    cost_per_unit: 2.0
+    // buttons: "Edit,Delete"
+  },
+  {
+    name: 'Strawberries',
+    batch_number: 'I567',
+    quantity: 350,
+    status: 'in-stock',
+    category: 'Fruits',
+    shelf_location: 'I6',
+    last_updated: new Date('2023-07-16'),
+    cost_per_unit: 1.0
+    // buttons: EditIcon
+  },
+  {
+    name: 'Blueberries',
+    batch_number: 'J890',
+    quantity: 400,
+    status: 'in-stock',
+    category: 'Fruits',
+    shelf_location: 'J7',
+    last_updated: new Date('2023-07-17'),
+    cost_per_unit: 1.1
+    // buttons: EditIcon
+  }
 ];
 
 

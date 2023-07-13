@@ -9,12 +9,11 @@ import { PiniaVuePlugin } from 'pinia'
 <template>
   <main>
     <SideBar />
-    <div>
+    <div class="routes">
       <RouterView />
-    </div>
-    
-  </main>
 
+    </div>
+  </main>
 </template>
 
 <style scoped lang="scss">
@@ -22,6 +21,9 @@ main {
   display: flex;
   overflow: hidden;
 
+.routes {
+  flex-grow: 1; /* Allow RouterView to expand and occupy available space */
+}
 }
 
 @media (max-width: 767px) {

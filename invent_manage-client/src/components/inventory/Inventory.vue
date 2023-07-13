@@ -12,7 +12,7 @@ import {sortColumn} from '@/utils/functions'
 
 <style lang="scss" scoped>
 .table__parent {
-  display: flex;
-  flex-flow: column;
+  width: 100%;
+  padding: 1rem;
 }
 </style>
