@@ -10,6 +10,7 @@ declare module 'vue' {
     AboutView: typeof import('./src/views/AboutView.vue')['default']
     Analytics: typeof import('./src/views/analytics/Analytics.vue')['default']
     AnalyticsIcon: typeof import('./src/components/icons/AnalyticsIcon.vue')['default']
+    Card: typeof import('./src/components/card/Card.vue')['default']
     Dashboard: typeof import('./src/views/dashboard/Dashboard.vue')['default']
     DashBoard: typeof import('./src/views/dashboard/DashBoard.vue')['default']
     DashboardIcon: typeof import('./src/components/icons/DashboardIcon.vue')['default']

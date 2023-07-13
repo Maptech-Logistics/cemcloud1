@@ -13,6 +13,8 @@ import SideBar from './components/sidebar/SideBar.vue'
 <style scoped lang="scss">
 main {
   display: flex;
+  overflow: hidden;
+
 }
 
 @media (max-width: 767px) {
@@ -20,7 +22,6 @@ main {
     flex-direction: column;
     justify-content: flex-end;
     height: 100vh;
-    overflow: hidden;
   }
 }
 </style>
