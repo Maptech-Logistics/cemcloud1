@@ -2,7 +2,8 @@
   <div class="table__parent">
     <Search @update-query="updateQuery" @update-filter="updateFilter" />
     <!-- <span style="color: black">{{ searchQuery }}</span> -->
-    <Table :headers="headers" :body="apiData" :sortColumn="sortColumn" />
+    <Loader v-if="isLoading" />
+    <Table v-else :headers="headers" :body="apiData" :sortColumn="sortColumn" />
   </div>
 </template>
 
@@ -22,7 +23,10 @@ const filter = ref<string>('')
 
 let debounceTimer: ReturnType<typeof setTimeout> | null = null
 
+const isLoading = ref(false)
+
 const fetchTableData = async (filter: string) => {
+  isLoading.value = true
   try {
     const data = searchQuery.value
       ? await fetchData(
@@ -33,6 +37,8 @@ const fetchTableData = async (filter: string) => {
     apiData.value = data
   } catch (error) {
     // error handler here :TODO
+  } finally {
+    isLoading.value = false
   }
 }
 
@@ -54,7 +60,6 @@ const updateFilter = (_filter: string) => {
   console.log(_filter)
   fetchTableData(_filter)
 }
-
 
 onMounted(() => fetchTableData(filter.value))
 </script>

@@ -1,5 +1,6 @@
 .tableWrapper table {
   border-collapse: collapse;
+  position: relative;
   width: 100%;
 }
 
@@ -39,6 +40,45 @@ td .edit {
 td .delete {
   color: red;
 }
+
+
+.action-btns {
+  display: flex;
+  justify-content: space-around;
+}
+
+span{
+  color: rgb(31, 137, 138);
+  font-size: 16px;
+}
+
+.dialog-footer{
+  display: flex;
+  flex-flow: row;
+  justify-content: space-around;
+}
+
+
+.skeleton-loader {
+  height: 20px;
+  background-color: #f5f5f5;
+  animation: skeleton-loader-animation 1.5s infinite linear;
+}
+
+@keyframes skeleton-loader-animation {
+  0% {
+    background-position: -300px 0;
+  }
+
+  50% {
+    background-position: -150px 0;
+  }
+
+  100% {
+    background-position: 200px 0;
+  }
+}
+
 
 /* Responsive Styles */
 @media screen and (max-width: 768px) {
