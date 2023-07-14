@@ -25,7 +25,7 @@ section {
   position: absolute;
   left: 12rem;
   display: flex;
-  justify-content: center;
+  // justify-content: center;
   flex-flow: column;
   width: 90%;
   height: 100vh;
