@@ -16,6 +16,7 @@ declare module 'vue' {
     DashBoard: typeof import('./src/views/dashboard/DashBoard.vue')['default']
     DashboardIcon: typeof import('./src/components/icons/DashboardIcon.vue')['default']
     DeleteIcon: typeof import('./src/components/icons/DeleteIcon.vue')['default']
+    DeleteModal: typeof import('./src/views/dashboard/DeleteModal.vue')['default']
     DiaLog: typeof import('./src/components/dialog/DiaLog.vue')['default']
     DisabledBtn: typeof import('./src/components/Buttons/disabledBtn.vue')['default']
     EditIcon: typeof import('./src/components/icons/EditIcon.vue')['default']
