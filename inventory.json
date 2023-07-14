@@ -1,28 +1,6 @@
 {
   "inventory": [
     {
-      "id": 1004,
-      "name": "Pears",
-      "batch_number": "A126",
-      "quantity": 250,
-      "status": "in-stock",
-      "category": "Fruits",
-      "shelf_location": "A4",
-      "last_updated": "2023-07-14T00:00:00.000Z",
-      "cost_per_unit": 0.8
-    },
-    {
-      "id": 1005,
-      "name": "Watermelons",
-      "batch_number": "A127",
-      "quantity": 300,
-      "status": "in-stock",
-      "category": "Fruits",
-      "shelf_location": "A5",
-      "last_updated": "2023-07-15T00:00:00.000Z",
-      "cost_per_unit": 0.9
-    },
-    {
       "id": 1006,
       "name": "Bananas",
       "batch_number": "B456",
@@ -131,6 +109,62 @@
       "shelf_location": "A2",
       "last_updated": "2023-07-12T00:00:00.000Z",
       "cost_per_unit": 0.6
-    }
+    },
+
+    {
+        "id": 1015,
+        "name": "Apples",
+        "batch_number": "K234",
+        "quantity": 200,
+        "status": "in-stock",
+        "category": "Fruits",
+        "shelf_location": "K4",
+        "last_updated": "2023-07-13T00:00:00.000Z",
+        "cost_per_unit": 0.8
+      },
+      {
+        "id": 1016,
+        "name": "Eggs",
+        "batch_number": "L567",
+        "quantity": 60,
+        "status": "in-stock",
+        "category": "Dairy",
+        "shelf_location": "L3",
+        "last_updated": "2023-07-13T00:00:00.000Z",
+        "cost_per_unit": 0.5
+      },
+      {
+        "id": 1017,
+        "name": "Chicken",
+        "batch_number": "M890",
+        "quantity": 30,
+        "status": "in-stock",
+        "category": "Meat",
+        "shelf_location": "M1",
+        "last_updated": "2023-07-12T00:00:00.000Z",
+        "cost_per_unit": 4
+      },
+      {
+        "id": 1018,
+        "name": "Pasta",
+        "batch_number": "N123",
+        "quantity": 50,
+        "status": "in-stock",
+        "category": "Pantry",
+        "shelf_location": "N2",
+        "last_updated": "2023-07-13T00:00:00.000Z",
+        "cost_per_unit": 1.2
+      },
+      {
+        "id": 1019,
+        "name": "Yogurt",
+        "batch_number": "O456",
+        "quantity": 40,
+        "status": "in-stock",
+        "category": "Dairy",
+        "shelf_location": "O5",
+        "last_updated": "2023-07-12T00:00:00.000Z",
+        "cost_per_unit": 0.9
+      }
   ]
 }

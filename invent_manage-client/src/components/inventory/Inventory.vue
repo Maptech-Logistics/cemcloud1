@@ -1,6 +1,7 @@
-<template lang="">
+<template>
   <div class="table__parent">
-    <Table :headers="headers" :body="apiData" :sortColumn="sortColumn" />
+    <Loader v-if="isLoading" />
+    <Table v-else :headers="headers" :body="apiData" :sortColumn="sortColumn" />
   </div>
 </template>
 
@@ -13,13 +14,17 @@ import { fetchData } from '@/api/fetchData';
 import type { TableData } from '@/types/types';
 
 const apiData = ref<TableData[]>([]);
+const isLoading = ref(false);
 
 const fetchTableData = async () => {
+  isLoading.value = true;
   try {
     const data = await fetchData(`${BASE_URL}/inventory`);
     apiData.value = data;
   } catch (error) {
     // error handler here :TODO
+  } finally {
+    isLoading.value = false;
   }
 };
 
