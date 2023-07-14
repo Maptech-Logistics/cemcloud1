@@ -5,7 +5,7 @@ import Inventory from '@/components/inventory/Inventory.vue'
 <template lang="">
   <main>
     <!-- <h2>This is the dashboard</h2> -->
-    <inventory />
+    <Inventory />
   </main>
 </template>
 

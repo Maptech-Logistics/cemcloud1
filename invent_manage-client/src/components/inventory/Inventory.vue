@@ -1,12 +1,14 @@
-<template lang="">
+<template>
   <div class="table__parent">
-    <Table :headers="headers" :body="dummyData" :sortColumn="sortColumn" />
+    <Table :headers="headers" :tableData="sortedTableData" :sortColumn="sortColumn" />
   </div>
 </template>
 
 <script setup lang="ts">
 import Table from '../table/Table.vue'
 import { headers, dummyData } from '@/utils/dummydata'
+import { ref, computed } from 'vue'
+import { sortTableData } from '@/utils/functions'
 
 interface TableData {
   name: string
@@ -20,10 +22,20 @@ interface TableData {
   buttons?: any
 }
 
+const tableData = ref<TableData[]>(dummyData)
+const sortState = ref<Record<string, 'asc' | 'desc'>>({})
+
 const sortColumn = (headName: string): void => {
-  // Logic for sorting the table by the selected column
-  // will be implemented in utils/functions.ts
+  const currentSortOrder = sortState.value[headName] || 'asc'
+  const nextSortOrder = currentSortOrder === 'asc' ? 'desc' : 'asc'
+  sortState.value[headName] = nextSortOrder
+
+  tableData.value = sortTableData(headName, tableData.value, nextSortOrder)
 }
+
+const sortedTableData = computed(() => {
+  return tableData.value
+})
 </script>
 
 <style lang="scss" scoped>

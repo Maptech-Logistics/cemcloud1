@@ -14,4 +14,6 @@ export type TableData = {
   last_updated: Date
   cost_per_unit: number
   buttons?: any
+  [key: string]: any // Index signature to allow indexing with a string
 }
+

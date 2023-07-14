@@ -10,16 +10,21 @@
           <th
             v-for="(headName, index) in headers"
             :key="index"
-            @click="sortColumn(headName.toLowerCase()); setCol(index)"
+            @click="sortColumn(headName.toLowerCase())"
+            :class="{ active: isSorted(headName.toLowerCase()) }"
             title="sort"
           >
-            {{ headName }}
+            <div class="header-content">
+              {{ headName }}
+              <template v-if="shouldShowArrow(headName.toLowerCase())">
+                <span v-if="isSorted(headName.toLowerCase())" :class="getSortDirection(headName.toLowerCase())"></span>
+              </template>
+            </div>
           </th>
-          
         </tr>
       </thead>
       <tbody>
-        <tr v-for="(data, index) in body" :key="index">
+        <tr v-for="(data, index) in sortedTableData" :key="index">
           <td>{{ index + 1 }}</td>
           <td>{{ data.name }}</td>
           <td>{{ data.batch_number }}</td>
@@ -33,7 +38,6 @@
             <edit-icon />
             <delete-icon />
           </td>
-          <!-- <td><component :size="20" :is="data.buttons!"  /></td> -->
         </tr>
       </tbody>
     </table>
@@ -41,7 +45,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref, watch } from 'vue'
 import { formatTimeAgo } from '@/utils/functions'
 
 interface TableData {
@@ -58,23 +62,84 @@ interface TableData {
 
 interface Props {
   headers: string[]
-  body: TableData[]
+  tableData: TableData[]
   sortColumn: (headName: string) => void
 }
 
 const props = defineProps<Props>()
 
 const col = ref(0)
+const sortColumns = ref<string[]>([]) // Store the columns that have been sorted
+const sortedTableData = ref(props.tableData)
 
 const setCol = (index: number): void => {
   col.value = index
 }
+
+const sortColumn = (headName: string): void => {
+  const sortIndex = sortColumns.value.indexOf(headName.toLowerCase())
+
+  if (sortIndex === -1) {
+    sortColumns.value = [headName.toLowerCase(), 'asc'] // Replace the existing sort columns with the new one
+  } else {
+    const sortDirection = sortColumns.value[sortIndex + 1]
+    sortColumns.value.splice(sortIndex + 1, 1, sortDirection === 'asc' ? 'desc' : 'asc')
+  }
+
+  props.sortColumn(headName.toLowerCase())
+}
+
+const isSorted = (headName: string): boolean => {
+  return sortColumns.value.includes(headName.toLowerCase())
+}
+
+const getSortDirection = (headName: string): string => {
+  const sortIndex = sortColumns.value.indexOf(headName.toLowerCase())
+  const sortDirection = sortColumns.value[sortIndex + 1]
+  return sortDirection === 'asc' ? 'sort-arrow-up' : 'sort-arrow-down'
+}
+
+const shouldShowArrow = (headName: string): boolean => {
+  const excludedHeaders = ['batch number', 'storage location', 'unit cost', 'date modified', 'status', 'actions']
+  return !excludedHeaders.includes(headName.toLowerCase())
+}
+
+// Watch for changes in the tableData prop and update the sortedTableData
+watch(() => props.tableData, (newTableData) => {
+  sortedTableData.value = [...newTableData] // Create a copy to trigger reactivity
+})
 </script>
 
 <style scoped lang="scss">
 @import './table.module.scss';
-.action-btns {
+
+.tableWrapper {
+  overflow-x: auto;
+}
+
+th {
+  cursor: pointer;
+}
+
+th.active {
+  color: #0000ff;
+}
+
+.header-content {
   display: flex;
-  justify-content: space-around;
+  align-items: center;
+}
+
+.sort-arrow-up:before {
+  content: "▲"; /* Upward triangle icon */
+}
+
+.sort-arrow-down:before {
+  content: "▼"; /* Downward triangle icon */
+}
+
+.sort-arrow {
+  margin-left: 4px;
+  font-size: 12px;
 }
 </style>
