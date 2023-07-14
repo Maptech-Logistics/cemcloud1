@@ -37,6 +37,7 @@ declare module 'vue' {
     RoundedBtn: typeof import('./src/components/Buttons/roundedBtn.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+    Search: typeof import('./src/components/search/Search.vue')['default']
     SecondaryBtn: typeof import('./src/components/Buttons/secondaryBtn.vue')['default']
     SideBar: typeof import('./src/components/sidebar/SideBar.vue')['default']
     SpinnerIcon: typeof import('./src/components/icons/SpinnerIcon.vue')['default']

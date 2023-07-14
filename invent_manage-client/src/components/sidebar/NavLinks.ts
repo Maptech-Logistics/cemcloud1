@@ -10,3 +10,4 @@ export const navLinks: Link[] = [
   { to: '/analytics', icon: SvgAnalyticsIcon, text: 'Analytics' },
   { to: '/profile/1', icon: SvgProfileIcon, text: 'Profile' }
 ]
+
