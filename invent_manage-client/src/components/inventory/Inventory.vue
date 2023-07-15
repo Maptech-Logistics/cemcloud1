@@ -15,7 +15,6 @@ import { BASE_URL, headers } from '@/utils/constants'
 import { sortColumn } from '@/utils/functions'
 import { fetchData } from '@/api/fetchData'
 import type { TableData } from '@/types/types'
-import { watch } from 'vue'
 
 const apiData = ref<TableData[]>([])
 const searchQuery = ref<string>('')
@@ -55,10 +54,11 @@ const updateQuery = (query: string) => {
   debounceSearch()
 }
 
-const updateFilter = (_filter: string) => {
+const updateFilter = async (_filter: string) => {
   filter.value = _filter
-  console.log(_filter)
-  fetchTableData(_filter)
+  // await nextTick()
+  // console.log(filter.value)
+  fetchTableData(filter.value)
 }
 
 onMounted(() => fetchTableData(filter.value))
