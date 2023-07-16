@@ -11,6 +11,7 @@ declare module 'vue' {
     AddItemForm: typeof import('./src/components/Form/AddItemForm.vue')['default']
     Analytics: typeof import('./src/views/analytics/Analytics.vue')['default']
     AnalyticsIcon: typeof import('./src/components/icons/AnalyticsIcon.vue')['default']
+    BaseForm: typeof import('./src/components/Form/BaseForm.vue')['default']
     BaseInput: typeof import('./src/components/Form/BaseInput.vue')['default']
     BaseSelect: typeof import('./src/components/Form/BaseSelect.vue')['default']
     Card: typeof import('./src/components/card/Card.vue')['default']
