@@ -1,6 +1,7 @@
 :root {
   --app-darkblue: #000022;
   --app-lightblue: #d6f5ff;
+  --app-lightred: #e4795b77;
   --app-white: #ffffff;
   --app-black: black;
   --app-semi: #4e4eaa46;
@@ -28,6 +29,7 @@
 }
 
 body {
+  overflow: hidden;
   min-height: 100vh;
   color: var(--color-text);
   background: var(--background-primary);
