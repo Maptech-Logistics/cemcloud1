@@ -1,81 +1,138 @@
 <template>
+    <div class="add-item">
+        <h3 class="form-heading">Add Inventory Item</h3>
     <form>
-        <BaseInput
-        v-model="event.name"
-        label="Item Name"
-        type="text"
-        />
-        <span v-for="error in v$.name.$errors" :key="error.$uid">{{ error.$message }}</span>
-        <!-- add v-if later -->
-        <BaseInput
-            v-model="event.batch_number"
-            label="Batch Id"
-            type="text"
-        />
-        <span v-for="error in v$.batch_number.$errors" :key="error.$uid">{{ error.$message }}</span>
-        <BaseInput
-            v-model="event.quantity"
-            label="Quantity"
-            type="number"
-            placeholder="0"
-            min = "0"
-        />
-        <span v-for="error in v$.quantity.$errors" :key="error.$uid">{{ error.$message }}</span>
-        <!-- <BaseInput
-            v-model="event.status"
-            label="Status"
-            placeholder="In Stock"
-            type="in-stock | out-of-stock"
-        /> -->
-        <BaseSelect
-            v-model="event.status"
-            label="Status"
-            options="selectOptions.availabilityStatus"
-            placeholder="in-Stock"
-        />
-        <span v-for="error in v$.status.$errors" :key="error.$uid">{{ error.$message }}</span>
-        <BaseSelect
-            v-model="event.category"
-            label="Category"
-            options="selectOptions.category"
-            placeholder="other"
-        />
-        <span v-for="error in v$.category.$errors" :key="error.$uid">{{ error.$message }}</span>
-        <BaseInput
-            v-model="event.shelf_location"
-            label="Storage Location"
-            type="text"
-        />
-        <span v-for="error in v$.shelf_location.$errors" :key="error.$uid">{{ error.$message }}</span>
-        <BaseInput
-            v-model="event.last_updated"
-            label="Last Modified"
-            type="date"
-        />
-        <span v-for="error in v$.last_updated.$errors" :key="error.$uid">{{ error.$message }}</span>
-        <BaseInput
-            v-model="event.cost_per_unit"
-            label="Unit Cost"
-            type="number"
-        />
-        <span v-for="error in v$.cost_per_unit.$errors" :key="error.$uid">{{ error.$message }}</span>
-    </form>
+        <div class="form-fields">
+            <div class="add-column-1">
+                <div class="field">
+                    <BaseInput
+                    v-model="event.name"
+                    label="Item Name"
+                    type="text"
+                    />
+                    <div>
+                        <span v-for="error in v$.name.$errors" :key="error.$uid" class="validate-messages">{{ error.$message }}</span>
+                    </div>
+                </div>
+                
+                <div class="field">
+                    <BaseInput
+                    v-model="event.batch_number"
+                    label="Batch Id"
+                    type="text"
+                    />
+                    <div>
+                        <span v-for="error in v$.batch_number.$errors" :key="error.$uid" class="validate-messages">{{ error.$message }}</span>
+                    </div> 
+                </div>
+                
+                <div class="field">
+                    <BaseInput
+                        v-model="event.quantity"
+                        label="Quantity"
+                        type="number"
+                        placeholder="0"
+                        min = "0"
+                    />
+                    <div>
+                        <span v-for="error in v$.quantity.$errors" :key="error.$uid" class="validate-messages">{{ error.$message }}</span>      
+                    </div>
+                </div>
 
-    
-    <primaryBtn type="submit" @submit="addItem">Add Item</primaryBtn>
+                <div class="field">
+                    <div>
+                        <label class="input-label">Availability Status</label>
+                    </div>
+                
+                    <select v-model="event.status" class="select-field">
+                    <option 
+                        v-for="option in selectOptions.availabilityStatus" 
+                        :key="option.value" 
+                        :value="option.value"
+                        
+                    >
+                        {{ option.text }}
+                    </option>
+                    </select>
+                    <div>
+                        <span v-for="error in v$.status.$errors" :key="error.$uid" class="validate-messages">{{ error.$message }}</span>
+                    </div>
+                </div>
+            </div>
+            <!-- :selected="value === option.value" -->
+
+            <div class="add-column-2">
+                <div class="field">
+                    <div>
+                        <label class="input-label">Category</label>
+                    </div>
+                    
+                    <select v-model="event.category" class="select-field">
+                    <option 
+                        v-for="option in selectOptions.category" 
+                        :key="option.value" 
+                        :value="option.value"
+                        
+                    >
+                    {{ option.text }}
+                    </option>
+                    </select>
+                    <div>
+                        <span v-for="error in v$.category.$errors" :key="error.$uid" class="validate-messages">{{ error.$message }}</span>
+                    </div>
+                </div>
+
+                <div class="field">
+                    <BaseInput
+                        v-model="event.shelf_location"
+                        label="Storage Location"
+                        type="text"
+                    />
+                    <div>
+                        <span v-for="error in v$.shelf_location.$errors" :key="error.$uid" class="validate-messages">{{ error.$message }}</span>
+                    </div>
+                </div>
+
+                <div class="field">
+                    <BaseInput
+                        v-model="event.last_updated"
+                        label="Last Modified"
+                        type="date"
+                    />
+                    <div>
+                        <span v-for="error in v$.last_updated.$errors" :key="error.$uid" class="validate-messages">{{ error.$message }}</span>
+                    </div>
+                </div>
+
+                <div class="field">
+                    <BaseInput
+                        v-model="event.cost_per_unit"
+                        label="Unit Cost"
+                        type="number"
+                    />
+                    <div>
+                        <span v-for="error in v$.cost_per_unit.$errors" :key="error.$uid" class="validate-messages">{{ error.$message }}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="buttons">
+            <primaryBtn type="button" @submit="addItem" class="add-button" style="margin: 10px;">Add Item</primaryBtn>
+            <primaryBtn type="button" @submit="closeDialog" class="add-button" style="padding: 5px; margin: 10px;">Cancel</primaryBtn>
+        </div>
+    </form>
+    </div>
+    <!-- <span>{{ event }}</span> -->
     <!-- <span v-for="error in v$.$errors" :key="error.$uid">{{ error.$property }} - {{ error.$message }}</span> -->
     
 </template>
 
-<script setup lang="js">
+<script setup lang="ts">
 import { dummyData } from '@/utils/dummydata';
 import { ref } from 'vue';
 import useVuelidate from '@vuelidate/core'
 import {required, minValue} from '@vuelidate/validators'
-import { reactive } from 'vue';
-// import BaseSelect from "@/components/Form/BaseSelect.vue"
-// import primaryBtn from "@/components/Buttons/primaryBtn.vue"
-// import BaseInput from "@/components/BaseInput.vue"
 
     const event = ref({
         batch_number: "",
@@ -94,16 +151,35 @@ import { reactive } from 'vue';
     })
 
     const addItem = async () => {
-        console.log(event.value)
         const result = await v$.value.$validate()
-        // console.log(event.value)
         if(result){
+            // we will add this to state and also send to server via api
             console.log("valid")
         }
         else{
-            console.log(v$)
+            // nothing happens
+            console.log("invalid")
+            return
         }
     }
+
+    const closeDialog = () => {
+        console.log("close dialog")
+    }
+
+    // const addItem = async (event) => {
+    // const addItem = async () => {
+    //     console.log(event.value)
+    //     // const result = await v$.value.$validate()
+    //     // console.log(result)
+    //     // console.log(event.value)
+    //     if(result){
+    //         console.log("valid")
+    //     }
+    //     else{
+    //         console.log(v$)
+    //     }
+    // }
 
     const rules = {
         batch_number: {required},
@@ -123,5 +199,5 @@ import { reactive } from 'vue';
 </script>
 
 <style>
-
+@import './AddItemForm.module.scss';
 </style>
