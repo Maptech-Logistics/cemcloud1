@@ -20,5 +20,5 @@ export type TableData = {
 export type TableProps = {
   headers: string[]
   body: TableData[]
-  sortColumn: (headName: string) => void
+  sortColumn: (column: string, data: TableData[], sortOrder: string) => TableData[]
 }
