@@ -1,20 +1,25 @@
 <script setup lang="ts">
 import HeadLine from '@/components/HeadLine.vue'
 import SideBar from '@/components/sidebar/SideBar.vue'
-import Modal from '@/components/modal/Modal.vue'
 import AddItemForm from '@/components/Form/AddItemForm.vue'
-import DiaLog from '@/components/dialog/DiaLog.vue'
+import primaryBtn from '@/components/Buttons/primaryBtn.vue';
+// import DiaLog from '@/components/dialog/DiaLog.vue'
 import { ref } from 'vue';
 
-// const show = ref(false)
-// const toggleModal = () => {
-//   show.value = !show.value
-// }
+const addIsOpen = ref(false)
+
+const toggleDialog = () => {
+  addIsOpen.value = !addIsOpen.value
+}
+const title = "Add Inventory Item"
+
 </script>
 
 <template>
   <main>
     <HeadLine msg="Welcome to the Maptec logistics inventory management dashboard" />
+    <primaryBtn @click="toggleDialog">Add Item</primaryBtn>
+
     <!-- <Modal :show="show" @close="toggleModal">
       <div class="modal-content">
         Creating my modal
@@ -23,13 +28,11 @@ import { ref } from 'vue';
     <!-- <button @click="toggleModal" type="button">Toggle Modal</button> -->
   </main>
   <div>
-    <p>i want to know that youre here o</p>
-    <!-- <Dialog>
+    <DiaLog :title="title" @toggle-dialog="toggleDialog" v-if="addIsOpen">
       <template #content>
         <AddItemForm />
       </template>
-    </Dialog> -->
-    <AddItemForm />
+    </DiaLog>
   </div>
   
 </template>

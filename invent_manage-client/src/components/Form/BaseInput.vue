@@ -4,7 +4,7 @@
             <label class="input-label">{{ label }}</label>
         </div>
         <input 
-            class="input-field"
+            class="class"
             v-bind="$attrs"
             :value="modelValue" 
             @input="$emit('update:modelValue', $event.target.value)"
@@ -22,7 +22,7 @@
         modelValue:{
             type: [String, Number ],
             default: ""
-        }
+        },
     });
     // console.log(modelValue);
 </script>
@@ -32,14 +32,4 @@
         font-size: 14px;
         font-weight: 20;
     }
-    .input-field{
-        max-width: 100%;
-        height: 40px;
-        border-radius: 5px;
-        border: 1px solid #ccc;
-        padding: 0 10px;
-        font-size: 14px;
-        font-weight: 20;
-    }
-
 </style>
