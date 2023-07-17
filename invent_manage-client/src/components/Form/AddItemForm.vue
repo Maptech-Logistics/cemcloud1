@@ -167,20 +167,6 @@ import {required, minValue} from '@vuelidate/validators'
         console.log("close dialog")
     }
 
-    // const addItem = async (event) => {
-    // const addItem = async () => {
-    //     console.log(event.value)
-    //     // const result = await v$.value.$validate()
-    //     // console.log(result)
-    //     // console.log(event.value)
-    //     if(result){
-    //         console.log("valid")
-    //     }
-    //     else{
-    //         console.log(v$)
-    //     }
-    // }
-
     const rules = {
         batch_number: {required},
         name: {required},
@@ -192,10 +178,7 @@ import {required, minValue} from '@vuelidate/validators'
         cost_per_unit: {required, minValue: minValue(0.1)},
     }
 
-    const v$ = useVuelidate(rules, event)
-    // const errors = ref(v$.$errors)
-    
-    
+    const v$ = useVuelidate(rules, event)  
 </script>
 
 <style>
