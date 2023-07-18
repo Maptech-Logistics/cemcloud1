@@ -44,5 +44,6 @@ declare module 'vue' {
     SideBar: typeof import('./src/components/sidebar/SideBar.vue')['default']
     SpinnerIcon: typeof import('./src/components/icons/SpinnerIcon.vue')['default']
     Table: typeof import('./src/components/table/Table.vue')['default']
+    UpdateItemForm: typeof import('./src/components/Form/UpdateItemForm.vue')['default']
   }
 }

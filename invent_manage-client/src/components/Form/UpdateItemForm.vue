@@ -1,7 +1,5 @@
 <template>
     <div class="add-item">
-        <div>{{ inventoryCount }}</div>
-        <div>{{ inventory }}</div>
         <!-- <h3 class="form-heading">Add Inventory Item</h3> -->
     <form>
         <div class="form-fields">
@@ -124,23 +122,21 @@
             <primaryBtn type="button" @submit="addButton" class="add-button" style="margin: 10px;">Add Item</primaryBtn>
         </div>
     </form>
-    </div> 
+    </div>
+    
 </template>
 
 <script setup lang="js">
 import { dummyData } from '@/utils/dummydata';
-// import {data} from './data';
-import { ref } from 'vue';
+import {data} from './data';
+import { ref, defineProps } from 'vue';
 import useVuelidate from '@vuelidate/core'
 import {required, minValue, numeric} from '@vuelidate/validators'
-import { add } from 'date-fns'
-import { useInventoryStore } from '@/stores/counter';
-import { storeToRefs } from 'pinia';
-    // const el = '#app'
-    const store = useInventoryStore()
-    const {inventory, inventoryCount} = storeToRefs(store)
+import { add } from 'date-fns';
+import { createHydrationRenderer } from 'vue';
+import { it } from 'date-fns/locale';
 
-    const event = ref({
+const event = ref({
         batch_number: "",
         name: "",
         quantity: 0,
@@ -159,10 +155,11 @@ import { storeToRefs } from 'pinia';
     const addButton = async () => {
         const result = await v$.value.$validate()
         if(result){
-            store.addInventory(event.value)
-            // store.setInventory([event.value])
-            // we will send to server via api
+            // we will add this to state and also send to server via api
             // then we will close the dialog
+            // $store.commit('addItem', event.value)
+            data[event.name] = event.value
+            console.log(data)
             console.log("valid")
         }
         else{
@@ -189,10 +186,42 @@ import { storeToRefs } from 'pinia';
 
     const v$ = useVuelidate(rules, event) 
 
-    
-    // make this await async
+// console.log(data)
+    // console.log(data['apples'])
 
-   
+    // defineProps({
+    //     itemdata: {
+    //         type: Object,
+    //         default: () => {}
+    //     }
+    // })
+
+    // const itemdata = {
+    //     batch_number: data['apples'].batch_number,
+    //     name: data['apples'].name,
+    //     quantity: data['apples'].quantity,
+    //     status: data['apples'].status,
+    //     category: data['apples'].category,
+    //     shelf_location: data['apples'].shelf_location,
+    //     last_updated: data['apples'].last_updated,
+    //     cost_per_unit: data['apples'].cost_per_unit,
+    // }
+
+    // console.log(itemdata)
+
+    // this.itemdata = data['apples'].data
+
+    // const sth = ref({
+    //     batch_number: "event.batch_number",
+    //     name: "itemdata.name",
+    //     quantity: 0,
+    //     status: "",
+    //     category: "",
+    //     shelf_location: "",
+    //     last_updated: "",
+    //     cost_per_unit: 0,
+    // })
+//    get items from data when update button is clicked
 </script>
 
 <style>
