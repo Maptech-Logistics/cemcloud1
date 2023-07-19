@@ -5,20 +5,20 @@ export type Link = {
 }
 
 export type TableData = {
+  id:number
   name: string
   batch_number: string
   quantity: number
   status: 'in-stock' | 'out-of-stock'
   category: string
   shelf_location: string
-  last_updated: Date
+  last_updated: string
   cost_per_unit: number
   buttons?: any
 }
 
-
 export type TableProps = {
   headers: string[]
   body: TableData[]
-  sortColumn: (headName: string) => void
+  sortColumn: (column: string, data: TableData[], sortOrder: string) => TableData[]
 }
