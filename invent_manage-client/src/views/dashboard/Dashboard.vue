@@ -26,6 +26,6 @@ export default {
   //     this.isOpen = !this.isOpen
   //   }
   // },
-  }
+}
 </script>
 <style></style>
