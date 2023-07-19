@@ -119,7 +119,7 @@
         </div>
 
         <div class="buttons">
-            <primaryBtn type="button" @submit="addButton" class="add-button" style="margin: 10px;">Add Item</primaryBtn>
+            <primaryBtn type="button" @submit="updateButton" class="add-button" style="margin: 10px;">Update Item</primaryBtn>
         </div>
     </form>
     </div>
@@ -128,13 +128,15 @@
 
 <script setup lang="js">
 import { dummyData } from '@/utils/dummydata';
-import {data} from './data';
+// import {data} from './data';
 import { ref, defineProps } from 'vue';
 import useVuelidate from '@vuelidate/core'
 import {required, minValue, numeric} from '@vuelidate/validators'
 import { add } from 'date-fns';
 import { createHydrationRenderer } from 'vue';
 import { it } from 'date-fns/locale';
+
+const emits = defineEmits(['change-visibility'])
 
 const event = ref({
         batch_number: "",
@@ -152,14 +154,15 @@ const event = ref({
         category: [{"value":"food", "text":"Food"}, {"value":"drinks","text":"Drinks"}, {"value":"stationery", "text":"Stationery"}, {"value":"cleaning", "text":"Cleaning"}, {"value":"other", "text":"Other"}]
     })
 
-    const addButton = async () => {
+    const updateButton = async () => {
         const result = await v$.value.$validate()
         if(result){
+            emits('change-visibility')
             // we will add this to state and also send to server via api
             // then we will close the dialog
             // $store.commit('addItem', event.value)
-            data[event.name] = event.value
-            console.log(data)
+            // data[event.name] = event.value
+            // console.log(data)
             console.log("valid")
         }
         else{

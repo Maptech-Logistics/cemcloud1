@@ -128,8 +128,6 @@
 </template>
 
 <script setup lang="js">
-import { dummyData } from '@/utils/dummydata';
-// import {data} from './data';
 import { ref } from 'vue';
 import useVuelidate from '@vuelidate/core'
 import {required, minValue, numeric} from '@vuelidate/validators'
@@ -139,6 +137,8 @@ import { storeToRefs } from 'pinia';
     // const el = '#app'
     const store = useInventoryStore()
     const {inventory, inventoryCount} = storeToRefs(store)
+    const emits = defineEmits(['change-visibility'])
+  
 
     const event = ref({
         batch_number: "",
@@ -161,9 +161,9 @@ import { storeToRefs } from 'pinia';
         if(result){
             store.addInventory(event.value)
             // store.setInventory([event.value])
-            // we will send to server via api
-            // then we will close the dialog
-            console.log("valid")
+            emits('change-visibility')
+            // we will send to server via apia
+            // console.log("valid")
         }
         else{
             // nothing happens
@@ -172,9 +172,6 @@ import { storeToRefs } from 'pinia';
         }
     }
 
-    const closeDialog = () => {
-        console.log("close dialog")
-    }
 
     const rules = {
         batch_number: {required},

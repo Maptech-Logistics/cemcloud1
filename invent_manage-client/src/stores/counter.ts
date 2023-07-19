@@ -1,48 +1,9 @@
-// import { th } from 'date-fns/locale'
-// import { defineStore } from 'pinia'
-// import { ref, computed } from 'vue'
-
-
-// export const useInventoryStore = defineStore('inventory',  {
-//   state: () => ({
-//     // try modifying inventory to be a dictionary
-//     inventory: [] as InventoryItem[],
-//     // inventory: {},
-//     inventoryCount: 0,
-//   }),
-//   getters: {
-//     getInventoryIds: (state) => { 
-//       state.inventory
-//     },
-//     getInventoryIdCount: (state) => {
-//       state.inventoryCount
-//     }
-//   },
-//   actions: {
-//     // can do async in here
-//     setInventory(state: { inventory: any }, inventory: any) {
-//       state.inventory = inventory
-//       this.inventoryCount += inventory.length
-//     },
-//     addInventory(inventoryItem: InventoryItem) {
-//       // this.inventory.push(inventoryItem)
-//       this.inventory.push(inventoryItem)
-//       this.inventoryCount++
-//     }
-//   }
-// })
-
-// interface InventoryItem {
-//   name: string;
-//   category: string;
-// }
-
 import { defineStore } from 'pinia';
 
 interface InventoryItem {
   name: string;
-  category: string;
-  // ... other properties
+  itemData: string;
+  // change to category later
 }
 
 interface InventoryState {
@@ -72,15 +33,6 @@ export const useInventoryStore = defineStore('inventory', {
       this.inventory[inventoryItem.name] = inventoryItem;
       this.inventoryCount++;
       //only increment if the item is not already in the inventory
-      // deal with setting it to only category later
-
-      
-      // if (!this.inventory.hasOwnProperty(inventoryItem.name)) {
-      //   this.incrementInventoryCount();
-      // }
     },
-    // incrementInventoryCount() {
-    //   this.inventoryCount++;
-    // }
   },
 });
