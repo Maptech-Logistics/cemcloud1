@@ -5,8 +5,8 @@
         <input />
         <br />
         <input />
-    </div>
-</template>
+      </div>
+    </template>
   </DiaLog> -->
   <h2>This is dashboard</h2>
 </template>
