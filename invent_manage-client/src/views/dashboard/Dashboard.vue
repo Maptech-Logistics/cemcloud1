@@ -1,47 +1,31 @@
-<script setup lang="ts">
-import Inventory from '@/components/inventory/Inventory.vue'
-</script>
-
 <template lang="">
-  <section>
-    <!-- <h2>This is the dashboard</h2> -->
-    <div class="stat__wrapper">
-      <card />
-      <card />
-      <card />
-      <card />
-      <card />
-      <card />
-      
+  <!-- <DiaLog :title="dialogTitle" v-show="isOpen" @toggle-dialog="toggleDialog">
+    <template v-slot:content>
+      <div style="display: flex; flex-direction: column; width: 100%">
+        <input />
+        <br />
+        <input />
     </div>
-    <div class="inventory__wrapper">
-      <inventory />
-    </div>
-  </section>
 </template>
-
-<style lang="scss" scoped>
-section{
-  // position: absolute;
-  margin-left: 12rem;
-  display: flex;
-  justify-content: center;
-  flex-flow: column;
-  width: 90%;
-  height: 100vh;
-  .stat__wrapper{
-    display: flex;
-    flex-wrap: wrap;
-    flex-basis: 1;
-    background-color: rgba(219, 237, 238, 0.266);
-    margin: 1rem;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-
+  </DiaLog> -->
+  <h2>This is dashboard</h2>
+</template>
+<script>
+// import DiaLog from '@/components/dialog/DiaLog.vue'
+export default {
+  data() {
+    return {
+      isOpen: true,
+      dialogTitle: 'Edit Item ',
+      email: ''
+    }
   }
 
-  .inventory__wrapper{
-    display:grid;
-    overflow: scroll;
+  // methods: {
+  //   toggleDialog() {
+  //     this.isOpen = !this.isOpen
+  //   }
+  // },
   }
-}
-</style>
+</script>
+<style></style>
