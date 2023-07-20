@@ -48,24 +48,24 @@
             
                 <select v-model="event.status" class="field-box">
                 <option 
-                    v-for="option in selectOptions.availabilityStatus" 
-                    :key="option.value" 
-                    :value="option.value"
+                    v-for="statusOption in selectOptions.availabilityStatus" 
+                    :key="statusOption.value" 
+                    :value="statusOption.value"
                     
                 >
-                    {{ option.text }}
+                    {{ statusOption.text }}
                 </option>
                 </select>
                 <div>
                     <span v-for="error in v$.status.$errors" :key="error.$uid" class="validate-messages">{{ error.$message }}</span>
                 </div>
             </div>
-        
+
             <div class="field">
                 <div>
                     <label class="input-label">Category</label>
                 </div>
-                
+            
                 <select v-model="event.category" class="field-box">
                 <option 
                     v-for="option in selectOptions.category" 
@@ -73,7 +73,7 @@
                     :value="option.value"
                     
                 >
-                {{ option.text }}
+                    {{ option.text }}
                 </option>
                 </select>
                 <div>
@@ -127,27 +127,27 @@
 </template>
 
 <script setup lang="js">
-import { dummyData } from '@/utils/dummydata';
-// import {data} from './data';
-import { ref, defineProps } from 'vue';
-import useVuelidate from '@vuelidate/core'
-import {required, minValue, numeric} from '@vuelidate/validators'
-import { add } from 'date-fns';
-import { createHydrationRenderer } from 'vue';
-import { it } from 'date-fns/locale';
+    import { getItemData } from '@/api/getInventoryItem'
+    import { BASE_URL } from '@/utils/constants'
+    import { onMounted } from 'vue'
+    import { ref, defineProps } from 'vue'
+    import useVuelidate from '@vuelidate/core'
+    import {required, minValue, numeric} from '@vuelidate/validators'
+    import axios from 'axios'
 
-const emits = defineEmits(['change-visibility'])
-
-const event = ref({
-        batch_number: "",
-        name: "",
-        quantity: 0,
-        status: "",
-        category: "",
-        shelf_location: "",
-        last_updated: "",
-        cost_per_unit: 0,
+    const event = ref({
     })
+
+    const loadData = onMounted(async() => {
+        const response = await getItemData(BASE_URL + "\\inventory\\", 1006)
+        event.value = response
+        // figure out why category is not showing
+        
+    })
+
+    loadData()
+
+    const emits = defineEmits(['change-visibility'])
 
     const selectOptions = ref({
         availabilityStatus: [{"value":"in-stock","text":"In Stock"}, {"value":"out-of-stock", "text":"Out of Stock"}],
@@ -157,23 +157,20 @@ const event = ref({
     const updateButton = async () => {
         const result = await v$.value.$validate()
         if(result){
-            emits('change-visibility')
-            // we will add this to state and also send to server via api
-            // then we will close the dialog
-            // $store.commit('addItem', event.value)
-            // data[event.name] = event.value
-            // console.log(data)
-            console.log("valid")
+            const response = await updateInventoryItem(1006, event.value)
+            console.log(response)
+            if(response.status == 200){
+                // store.addInventory(event.value)
+                // think about what ill do with store
+                emits('change-visibility')
+            }
+            else{
+                console.log("failed")
+            }
         }
         else{
-            // nothing happens
-            console.log("invalid")
             return
         }
-    }
-
-    const closeDialog = () => {
-        console.log("close dialog")
     }
 
     const rules = {
@@ -184,47 +181,23 @@ const event = ref({
         category: {required},
         shelf_location: {required},
         last_updated: {required},
-        cost_per_unit: {required, minValue: minValue(1), numeric},
+        cost_per_unit: {required, minValue: minValue(0.1), numeric},
     }
 
     const v$ = useVuelidate(rules, event) 
 
-// console.log(data)
-    // console.log(data['apples'])
+    const updateInventoryItem = async (itemId, data) => {
+        try{
+            const response = await axios.put(`${BASE_URL}/inventory/${itemId}`, data)
+            return response
+        }
+        catch(error){
+            console.error('Error updating data:', error);
+            throw error;
+        }
+    }
 
-    // defineProps({
-    //     itemdata: {
-    //         type: Object,
-    //         default: () => {}
-    //     }
-    // })
 
-    // const itemdata = {
-    //     batch_number: data['apples'].batch_number,
-    //     name: data['apples'].name,
-    //     quantity: data['apples'].quantity,
-    //     status: data['apples'].status,
-    //     category: data['apples'].category,
-    //     shelf_location: data['apples'].shelf_location,
-    //     last_updated: data['apples'].last_updated,
-    //     cost_per_unit: data['apples'].cost_per_unit,
-    // }
-
-    // console.log(itemdata)
-
-    // this.itemdata = data['apples'].data
-
-    // const sth = ref({
-    //     batch_number: "event.batch_number",
-    //     name: "itemdata.name",
-    //     quantity: 0,
-    //     status: "",
-    //     category: "",
-    //     shelf_location: "",
-    //     last_updated: "",
-    //     cost_per_unit: 0,
-    // })
-//    get items from data when update button is clicked
 </script>
 
 <style>

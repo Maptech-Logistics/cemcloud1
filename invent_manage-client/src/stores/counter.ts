@@ -1,7 +1,7 @@
 import { defineStore } from 'pinia';
 
 interface InventoryItem {
-  name: string;
+  id: string;
   itemData: string;
   // change to category later
 }
@@ -23,14 +23,13 @@ export const useInventoryStore = defineStore('inventory', {
   actions: {
     setInventory(inventory: InventoryItem[]) {
       this.inventory = inventory.reduce((acc, item) => {
-        acc[item.name] = item;
+        acc[item.id] = item;
         return acc;
       }, {} as Record<string, InventoryItem>);
-
       this.inventoryCount = Object.keys(this.inventory).length;
     },
-    addInventory(inventoryItem: InventoryItem) {
-      this.inventory[inventoryItem.name] = inventoryItem;
+    addInventory (inventoryItem: InventoryItem) {
+      this.inventory[inventoryItem.id] = inventoryItem;
       this.inventoryCount++;
       //only increment if the item is not already in the inventory
     },

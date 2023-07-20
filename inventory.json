@@ -4,12 +4,12 @@
       "id": 1006,
       "name": "Bananas",
       "batch_number": "B456",
-      "quantity": 75,
+      "quantity": "80",
       "status": "in-stock",
-      "category": "Fruits",
+      "category": "food",
       "shelf_location": "B3",
-      "last_updated": "2023-07-10T00:00:00.000Z",
-      "cost_per_unit": 0.3
+      "last_updated": "2023-07-20",
+      "cost_per_unit": "1"
     },
     {
       "id": 1007,
@@ -110,61 +110,161 @@
       "last_updated": "2023-07-12T00:00:00.000Z",
       "cost_per_unit": 0.6
     },
-
     {
-        "id": 1015,
-        "name": "Apples",
-        "batch_number": "K234",
-        "quantity": 200,
-        "status": "in-stock",
-        "category": "Fruits",
-        "shelf_location": "K4",
-        "last_updated": "2023-07-13T00:00:00.000Z",
-        "cost_per_unit": 0.8
-      },
-      {
-        "id": 1016,
-        "name": "Eggs",
-        "batch_number": "L567",
-        "quantity": 60,
-        "status": "in-stock",
-        "category": "Dairy",
-        "shelf_location": "L3",
-        "last_updated": "2023-07-13T00:00:00.000Z",
-        "cost_per_unit": 0.5
-      },
-      {
-        "id": 1017,
-        "name": "Chicken",
-        "batch_number": "M890",
-        "quantity": 30,
-        "status": "in-stock",
-        "category": "Meat",
-        "shelf_location": "M1",
-        "last_updated": "2023-07-12T00:00:00.000Z",
-        "cost_per_unit": 4
-      },
-      {
-        "id": 1018,
-        "name": "Pasta",
-        "batch_number": "N123",
-        "quantity": 50,
-        "status": "in-stock",
-        "category": "Pantry",
-        "shelf_location": "N2",
-        "last_updated": "2023-07-13T00:00:00.000Z",
-        "cost_per_unit": 1.2
-      },
-      {
-        "id": 1019,
-        "name": "Yogurt",
-        "batch_number": "O456",
-        "quantity": 40,
-        "status": "in-stock",
-        "category": "Dairy",
-        "shelf_location": "O5",
-        "last_updated": "2023-07-12T00:00:00.000Z",
-        "cost_per_unit": 0.9
-      }
+      "id": 1015,
+      "name": "Apples",
+      "batch_number": "K234",
+      "quantity": 200,
+      "status": "in-stock",
+      "category": "Fruits",
+      "shelf_location": "K4",
+      "last_updated": "2023-07-13T00:00:00.000Z",
+      "cost_per_unit": 0.8
+    },
+    {
+      "id": 1016,
+      "name": "Eggs",
+      "batch_number": "L567",
+      "quantity": 60,
+      "status": "in-stock",
+      "category": "Dairy",
+      "shelf_location": "L3",
+      "last_updated": "2023-07-13T00:00:00.000Z",
+      "cost_per_unit": 0.5
+    },
+    {
+      "id": 1017,
+      "name": "Chicken",
+      "batch_number": "M890",
+      "quantity": 30,
+      "status": "in-stock",
+      "category": "Meat",
+      "shelf_location": "M1",
+      "last_updated": "2023-07-12T00:00:00.000Z",
+      "cost_per_unit": 4
+    },
+    {
+      "id": 1018,
+      "name": "Pasta",
+      "batch_number": "N123",
+      "quantity": 50,
+      "status": "in-stock",
+      "category": "Pantry",
+      "shelf_location": "N2",
+      "last_updated": "2023-07-13T00:00:00.000Z",
+      "cost_per_unit": 1.2
+    },
+    {
+      "id": 1019,
+      "name": "Yogurt",
+      "batch_number": "O456",
+      "quantity": 40,
+      "status": "in-stock",
+      "category": "Dairy",
+      "shelf_location": "O5",
+      "last_updated": "2023-07-12T00:00:00.000Z",
+      "cost_per_unit": 0.9
+    },
+    {
+      "id": 1020
+    },
+    {
+      "id": 1021
+    },
+    {
+      "id": 1022
+    },
+    {
+      "id": 1023
+    },
+    {
+      "id": 1024
+    },
+    {
+      "id": 1025
+    },
+    {
+      "id": 1026
+    },
+    {
+      "id": 1027
+    },
+    {
+      "we up bitches": "",
+      "id": 1028
+    },
+    {
+      "id": 1029
+    },
+    {
+      "data": "works",
+      "id": 1030
+    },
+    {
+      "id": 1031
+    },
+    {
+      "id": 1032
+    },
+    {
+      "id": 1033
+    },
+    {
+      "id": 1034
+    },
+    {
+      "id": 1035
+    },
+    {
+      "id": 1036
+    },
+    {
+      "id": 1037
+    },
+    {
+      "id": 1038
+    },
+    {
+      "id": 1039
+    },
+    {
+      "id": 1040
+    },
+    {
+      "id": 1041
+    },
+    {
+      "name": "a",
+      "batch_number": "a",
+      "quantity": "1",
+      "status": "in-stock",
+      "category": "stationery",
+      "shelf_location": "a",
+      "last_updated": "2023-07-20",
+      "cost_per_unit": "1",
+      "id": 1042
+    },
+    {
+      "name": "b",
+      "batch_number": "b",
+      "quantity": "1",
+      "status": "in-stock",
+      "category": "food",
+      "shelf_location": "b",
+      "last_updated": "2023-07-20",
+      "cost_per_unit": "1",
+      "id": 1043
+    },
+    {
+      "name": "c",
+      "batch_number": "c",
+      "quantity": "1",
+      "status": "in-stock",
+      "category": "cleaning",
+      "shelf_location": "c",
+      "last_updated": "2023-07-20",
+      "cost_per_unit": "1",
+      "id": 1044
+    }
   ]
 }

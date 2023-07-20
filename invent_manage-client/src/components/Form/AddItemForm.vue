@@ -2,7 +2,6 @@
     <div class="add-item">
         <div>{{ inventoryCount }}</div>
         <div>{{ inventory }}</div>
-        <!-- <h3 class="form-heading">Add Inventory Item</h3> -->
     <form>
         <div class="form-fields">
             <div class="field">
@@ -128,27 +127,27 @@
 </template>
 
 <script setup lang="js">
-import { ref } from 'vue';
-import useVuelidate from '@vuelidate/core'
-import {required, minValue, numeric} from '@vuelidate/validators'
-import { add } from 'date-fns'
-import { useInventoryStore } from '@/stores/counter';
-import { storeToRefs } from 'pinia';
-    // const el = '#app'
+    import { ref } from 'vue';
+    import useVuelidate from '@vuelidate/core'
+    import {required, minValue, numeric} from '@vuelidate/validators'
+    import { useInventoryStore } from '@/stores/counter'
+    import { storeToRefs } from 'pinia'
+    import { BASE_URL } from '@/utils/constants';
+    import axios from 'axios';
+    
     const store = useInventoryStore()
     const {inventory, inventoryCount} = storeToRefs(store)
     const emits = defineEmits(['change-visibility'])
   
-
     const event = ref({
-        batch_number: "",
-        name: "",
-        quantity: 0,
-        status: "",
-        category: "",
-        shelf_location: "",
-        last_updated: "",
-        cost_per_unit: 0,
+        "name": "",
+        "batch_number": "",
+        "quantity": 0,
+        "status": "",
+        "category": "",
+        "shelf_location": "",
+        "last_updated": "",
+        "cost_per_unit": 0,
     })
 
     const selectOptions = ref({
@@ -158,16 +157,18 @@ import { storeToRefs } from 'pinia';
 
     const addButton = async () => {
         const result = await v$.value.$validate()
+
         if(result){
-            store.addInventory(event.value)
-            // store.setInventory([event.value])
-            emits('change-visibility')
-            // we will send to server via apia
-            // console.log("valid")
+            const response = await createInventoryItem(BASE_URL + "\\inventory\\", event.value)
+            if(response.status == 201){
+                store.addInventory(event.value)
+                emits('change-visibility')
+            }
+            else{
+                console.log("failed")
+            }
         }
         else{
-            // nothing happens
-            console.log("invalid")
             return
         }
     }
@@ -181,15 +182,20 @@ import { storeToRefs } from 'pinia';
         category: {required},
         shelf_location: {required},
         last_updated: {required},
-        cost_per_unit: {required, minValue: minValue(1), numeric},
+        cost_per_unit: {required, minValue: minValue(0.1), numeric},
     }
 
     const v$ = useVuelidate(rules, event) 
-
     
-    // make this await async
-
-   
+    const createInventoryItem = async (data) => {
+    try {
+            const response = await axios.post(BASE_URL + "\\inventory\\", data);
+            return response;
+        } catch (error) {
+            console.error('Error creating data:', error);
+            throw error;
+        }
+    }
 </script>
 
 <style>
