@@ -108,6 +108,7 @@ const deleteItem = async (): Promise<void> => {
   try {
     if (selectedItem.value) {
       await deleteData(selectedItem.value.id);
+      location.reload()
     }
     toggleDialog();
   } catch (error) {
