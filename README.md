@@ -4,7 +4,7 @@
 ## Getting Started
 
 
-## Running LOcally
+## Running Locally
 
 `cd invent_manage_client`
 
