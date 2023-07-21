@@ -1,7 +1,8 @@
 import { defineStore } from 'pinia';
+import { watch } from 'vue';
 
 interface InventoryItem {
-  id: string;
+  name: string;
   itemData: string;
   // change to category later
 }
@@ -23,15 +24,30 @@ export const useInventoryStore = defineStore('inventory', {
   actions: {
     setInventory(inventory: InventoryItem[]) {
       this.inventory = inventory.reduce((acc, item) => {
-        acc[item.id] = item;
+        acc[item.name] = item;
         return acc;
       }, {} as Record<string, InventoryItem>);
       this.inventoryCount = Object.keys(this.inventory).length;
     },
     addInventory (inventoryItem: InventoryItem) {
-      this.inventory[inventoryItem.id] = inventoryItem;
-      this.inventoryCount++;
-      //only increment if the item is not already in the inventory
+      const itemExists = Object.keys(this.inventory).includes(inventoryItem.name);
+      if(!itemExists) {
+        this.inventoryCount++;
+      }
+      this.inventory[inventoryItem.name] = inventoryItem;
     },
   },
 });
+
+watch(
+  () => useInventoryStore().$state,
+  (newState) => {
+    localStorage.setItem('inventoryStore', JSON.stringify(newState));
+  },
+  { deep: true } // Watch nested properties of the state as well
+);
+
+const persistedState = JSON.parse(localStorage.getItem('inventoryStore') || '{}');
+useInventoryStore().$state = persistedState
+
+

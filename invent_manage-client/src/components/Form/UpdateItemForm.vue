@@ -140,9 +140,8 @@
 
     const loadData = onMounted(async() => {
         const response = await getItemData(BASE_URL + "\\inventory\\", 1006)
+        response.last_updated = new Date().toISOString().slice(0,10),
         event.value = response
-        // figure out why category is not showing
-        
     })
 
     loadData()
@@ -160,8 +159,7 @@
             const response = await updateInventoryItem(1006, event.value)
             console.log(response)
             if(response.status == 200){
-                // store.addInventory(event.value)
-                // think about what ill do with store
+                store.addInventory(event.value)
                 emits('change-visibility')
             }
             else{

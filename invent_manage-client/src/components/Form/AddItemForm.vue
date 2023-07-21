@@ -134,10 +134,23 @@
     import { storeToRefs } from 'pinia'
     import { BASE_URL } from '@/utils/constants';
     import axios from 'axios';
+
+    const getDate = () => {
+        const currentDate = new Date();
+      const date = currentDate;
+      const month = String(date.getMonth() + 1).padStart(2, '0');
+      const day = String(date.getDate()).padStart(2, '0');
+      const year = date.getFullYear();
+
+      return `${month}/${day}/${year}`;
+    
+    }
     
     const store = useInventoryStore()
     const {inventory, inventoryCount} = storeToRefs(store)
     const emits = defineEmits(['change-visibility'])
+    const currentDate = getDate()
+    console.log(currentDate)
   
     const event = ref({
         "name": "",
@@ -146,7 +159,7 @@
         "status": "",
         "category": "",
         "shelf_location": "",
-        "last_updated": "",
+        "last_updated": new Date().toISOString().slice(0,10),
         "cost_per_unit": 0,
     })
 
@@ -196,6 +209,12 @@
             throw error;
         }
     }
+
+
+    // console.log(getDate())
+    // const date = new Date().toISOString().slice(0,10);
+    // const date = new Date().toDateString();
+    // console.log (date)
 </script>
 
 <style>
