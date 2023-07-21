@@ -6,9 +6,10 @@
 
 ## Running Locally
 
-`cd invent_manage_client`
+- `cd invent_manage_client`
 
-`yarn install` or `npm install`
+- `yarn install` or `npm install`
+- `yarn dev` or `npm run dev`
 
 - Open a different terminal to run the mock server
 
