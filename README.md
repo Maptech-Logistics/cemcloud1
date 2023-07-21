@@ -6,7 +6,7 @@
 
 ## Running Locally
 
-- `cd invent_manage_client`
+- `cd invent_manage-client`
 
 - `yarn install` or `npm install`
 - `yarn dev` or `npm run dev`
