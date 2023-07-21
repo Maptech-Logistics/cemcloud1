@@ -1,7 +1,3 @@
-<script setup lang="ts">
-import Inventory from '@/components/inventory/Inventory.vue'
-</script>
-
 <template lang="">
   <section>
     <!-- <h2>This is the dashboard</h2> -->
@@ -19,6 +15,18 @@ import Inventory from '@/components/inventory/Inventory.vue'
     </div>
   </section>
 </template>
+<script>
+// import DiaLog from '@/components/dialog/DiaLog.vue'
+export default {
+  data() {
+    return {
+      isOpen: true,
+      dialogTitle: 'Edit Item ',
+      email: ''
+    }
+  }
+}
+</script>
 
 <style lang="scss" scoped>
 section{

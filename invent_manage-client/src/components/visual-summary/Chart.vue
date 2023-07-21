@@ -1,10 +1,10 @@
 <template>
   <div>
-    <Bar :data="data" :options="options" />
+    <!-- <Bar :data="data" :options="options" /> -->
   </div>
 </template>
 
-<script lang="ts">
+<!-- <script lang="ts">
 import { headers, dummyData } from '@/utils/dummydata'
 // modularize and make one the graph
 import {
@@ -44,4 +44,4 @@ export default {
     }
   }
 }
-</script>
+</script> -->
