@@ -1,8 +1,7 @@
 <template>
     <div class="add-item">
-        <div>{{ inventoryCount }}</div>
-        <div>{{ inventory }}</div>
     <form>
+        <!-- <div>{{ inventory }}{{ inventoryCount }}</div> -->
         <div class="form-fields">
             <div class="field">
                 <BaseInput
@@ -97,18 +96,6 @@
             <div class="field">
                 <BaseInput
                     class="field-box"
-                    v-model="event.last_updated"
-                    label="Last Modified"
-                    type="date"
-                />
-                <div>
-                    <span v-for="error in v$.last_updated.$errors" :key="error.$uid" class="validate-messages">{{ error.$message }}</span>
-                </div>
-            </div>
-
-            <div class="field">
-                <BaseInput
-                    class="field-box"
                     v-model="event.cost_per_unit"
                     label="Unit Cost"
                     type="number"
@@ -128,29 +115,15 @@
 
 <script setup lang="js">
     import { ref } from 'vue';
-    import useVuelidate from '@vuelidate/core'
-    import {required, minValue, numeric} from '@vuelidate/validators'
-    import { useInventoryStore } from '@/stores/counter'
-    import { storeToRefs } from 'pinia'
+    import useVuelidate from '@vuelidate/core';
+    import {required, minValue, numeric} from '@vuelidate/validators';
+    import { useInventoryStore } from '@/stores/counter';
     import { BASE_URL } from '@/utils/constants';
-    import axios from 'axios';
-
-    const getDate = () => {
-        const currentDate = new Date();
-      const date = currentDate;
-      const month = String(date.getMonth() + 1).padStart(2, '0');
-      const day = String(date.getDate()).padStart(2, '0');
-      const year = date.getFullYear();
-
-      return `${month}/${day}/${year}`;
-    
-    }
+    import axios from 'axios'
     
     const store = useInventoryStore()
-    const {inventory, inventoryCount} = storeToRefs(store)
+    // const { inventory, inventoryCount } = store
     const emits = defineEmits(['change-visibility'])
-    const currentDate = getDate()
-    console.log(currentDate)
   
     const event = ref({
         "name": "",
@@ -159,7 +132,7 @@
         "status": "",
         "category": "",
         "shelf_location": "",
-        "last_updated": new Date().toISOString().slice(0,10),
+        "last_updated": new Date().toISOString(),
         "cost_per_unit": 0,
     })
 
@@ -172,20 +145,16 @@
         const result = await v$.value.$validate()
 
         if(result){
-            const response = await createInventoryItem(BASE_URL + "\\inventory\\", event.value)
-            if(response.status == 201){
+            try{
+                await createInventoryItem(event.value)
                 store.addInventory(event.value)
                 emits('change-visibility')
+            } catch (error) {
+                console.error('Error creating data:', error);
+                throw error;
             }
-            else{
-                console.log("failed")
-            }
-        }
-        else{
-            return
         }
     }
-
 
     const rules = {
         batch_number: {required},
@@ -202,7 +171,7 @@
     
     const createInventoryItem = async (data) => {
     try {
-            const response = await axios.post(BASE_URL + "\\inventory\\", data);
+            const response = await axios.post(`${BASE_URL}/inventory`, data);
             return response;
         } catch (error) {
             console.error('Error creating data:', error);
@@ -210,11 +179,6 @@
         }
     }
 
-
-    // console.log(getDate())
-    // const date = new Date().toISOString().slice(0,10);
-    // const date = new Date().toDateString();
-    // console.log (date)
 </script>
 
 <style>

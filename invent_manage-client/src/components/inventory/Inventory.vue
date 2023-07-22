@@ -1,6 +1,16 @@
 <template>
   <div class="table__parent">
     <Search @update-query="updateQuery" @update-filter="updateFilter" />
+    <primaryBtn @click="addToggleDialog">Add Item</primaryBtn>
+
+    <div>
+      <DiaLog :title="addTitle" @toggle-dialog="addToggleDialog" v-if="addIsOpen">
+        <template #content>
+          <AddItemForm @change-visibility="addToggleDialog"/>
+        </template>
+      </DiaLog>
+    </div>
+    
     <!-- <span style="color: black">{{ searchQuery }}</span> -->
     <Loader v-if="isLoading" />
     <Table v-else :headers="headers" :body="apiData" :sortColumn="sortColumn" />
@@ -15,10 +25,13 @@ import { BASE_URL, headers } from '@/utils/constants'
 import { sortColumn } from '@/utils/functions'
 import { fetchData } from '@/api/fetchData'
 import type { TableData } from '@/types/types'
+import primaryBtn from '@/components/Buttons/primaryBtn.vue'
 
 const apiData = ref<TableData[]>([])
 const searchQuery = ref<string>('')
 const filter = ref<string>('')
+const addIsOpen = ref(false)
+const addTitle = "Add Inventory Item"
 
 let debounceTimer: ReturnType<typeof setTimeout> | null = null
 
@@ -59,6 +72,10 @@ const updateFilter = async (_filter: string) => {
   // await nextTick()
   // console.log(filter.value)
   fetchTableData(filter.value)
+}
+
+const addToggleDialog = () => {
+  addIsOpen.value = !addIsOpen.value
 }
 
 onMounted(() => fetchTableData(filter.value))

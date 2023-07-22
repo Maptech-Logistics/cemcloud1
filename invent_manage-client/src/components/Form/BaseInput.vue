@@ -31,5 +31,6 @@
     .input-label{
         font-size: 14px;
         font-weight: 20;
+        justify-content: left;
     }
 </style>

@@ -44,8 +44,15 @@
             <td>{{ formatTimeAgo(data.last_updated) }}</td>
             <td>{{ data.cost_per_unit }}</td>
             <td class="action-btns">
-              <div title="edit">
-                <edit-icon />
+              <div title="edit" @click="openUpdateDialog(data.id)">
+                <edit-icon/>
+              </div>
+              <div>
+                <CustomDialog :title="updateTitle" @toggle-dialog="updateToggleDialog" v-if="updateIsOpen">
+                  <template #content>
+                    <UpdateItemForm @change-visibility="updateToggleDialog" :itemId="itemId" />
+                  </template>
+                </CustomDialog>
               </div>
               <div @click="openDialog(data)" title="delete">
                 <delete-icon />
@@ -77,6 +84,8 @@ import { formatTimeAgo, sortColumn } from '@/utils/functions';
 import type { TableData, TableProps } from '@/types/types';
 import CustomDialog from '@/components/dialog/DiaLog.vue';
 import { deleteData } from '@/api/deleteInventory';
+import UpdateItemForm from '@/components/Form/UpdateItemForm.vue';
+
 
 const props = defineProps<TableProps>();
 const col = ref(0);
@@ -85,6 +94,24 @@ const dialogTitle = ref('Delete Confirmation');
 const selectedItem = ref<TableData | null>(null);
 const loading = ref(true);
 const sortOrder = ref('');
+const updateIsOpen = ref(false);
+const updateTitle = "Update Inventory Item";
+
+let itemId = 0
+
+const updateToggleDialog = () => {
+  updateIsOpen.value = !updateIsOpen.value;
+}
+
+const storeId = (id: number): void => {
+  itemId = id
+};
+
+const openUpdateDialog = (id: number): void => {
+  storeId(id),
+  updateToggleDialog()
+}
+
 
 const setCol = (index: number): void => {
   if (index === col.value) {
@@ -94,6 +121,8 @@ const setCol = (index: number): void => {
     sortOrder.value = 'asc';
   }
 };
+
+
 
 const openDialog = (item: TableData): void => {
   selectedItem.value = item;

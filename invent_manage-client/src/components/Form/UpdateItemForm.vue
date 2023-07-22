@@ -1,6 +1,5 @@
 <template>
     <div class="add-item">
-        <!-- <h3 class="form-heading">Add Inventory Item</h3> -->
     <form>
         <div class="form-fields">
             <div class="field">
@@ -96,18 +95,6 @@
             <div class="field">
                 <BaseInput
                     class="field-box"
-                    v-model="event.last_updated"
-                    label="Last Modified"
-                    type="date"
-                />
-                <div>
-                    <span v-for="error in v$.last_updated.$errors" :key="error.$uid" class="validate-messages">{{ error.$message }}</span>
-                </div>
-            </div>
-
-            <div class="field">
-                <BaseInput
-                    class="field-box"
                     v-model="event.cost_per_unit"
                     label="Unit Cost"
                     type="number"
@@ -130,21 +117,31 @@
     import { getItemData } from '@/api/getInventoryItem'
     import { BASE_URL } from '@/utils/constants'
     import { onMounted } from 'vue'
-    import { ref, defineProps } from 'vue'
+    import { ref } from 'vue'
     import useVuelidate from '@vuelidate/core'
+    import { useInventoryStore } from '@/stores/counter'
     import {required, minValue, numeric} from '@vuelidate/validators'
     import axios from 'axios'
+
+    const props = defineProps({
+        itemId: {
+            type: Number,
+            default: 0
+        }
+    })
+
+    const itemId = props.itemId
+
+    const store = useInventoryStore()
 
     const event = ref({
     })
 
-    const loadData = onMounted(async() => {
-        const response = await getItemData(BASE_URL + "\\inventory\\", 1006)
-        response.last_updated = new Date().toISOString().slice(0,10),
+    onMounted(async() => {
+        const response = await getItemData(BASE_URL + "/inventory/", itemId)
+        response.last_updated = new Date().toISOString()
         event.value = response
     })
-
-    loadData()
 
     const emits = defineEmits(['change-visibility'])
 
@@ -156,18 +153,14 @@
     const updateButton = async () => {
         const result = await v$.value.$validate()
         if(result){
-            const response = await updateInventoryItem(1006, event.value)
-            console.log(response)
-            if(response.status == 200){
+            try{
+                await updateInventoryItem(itemId, event.value)
                 store.addInventory(event.value)
                 emits('change-visibility')
+            } catch(error){
+                console.error('Error updating data:', error);
+                throw error;
             }
-            else{
-                console.log("failed")
-            }
-        }
-        else{
-            return
         }
     }
 
@@ -194,8 +187,6 @@
             throw error;
         }
     }
-
-
 </script>
 
 <style>

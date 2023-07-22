@@ -2,14 +2,14 @@
   "inventory": [
     {
       "id": 1006,
-      "name": "Bananas",
-      "batch_number": "B456",
-      "quantity": "80",
-      "status": "out-of-stock",
+      "name": "Strawberries",
+      "batch_number": "I567",
+      "quantity": "352",
+      "status": "in-stock",
       "category": "food",
-      "shelf_location": "B3",
-      "last_updated": "2023-07-20",
-      "cost_per_unit": "1"
+      "shelf_location": "I6",
+      "last_updated": "2023-07-22T02:54:38.710Z",
+      "cost_per_unit": 1
     },
     {
       "id": 1007,
@@ -28,9 +28,9 @@
       "batch_number": "D012",
       "quantity": 25,
       "status": "in-stock",
-      "category": "Bakery",
+      "category": "food",
       "shelf_location": "D4",
-      "last_updated": "2023-07-09T00:00:00.000Z",
+      "last_updated": "2023-07-22T02:51:32.674Z",
       "cost_per_unit": 2.5
     },
     {
@@ -39,9 +39,9 @@
       "batch_number": "E345",
       "quantity": 15,
       "status": "in-stock",
-      "category": "Breakfast",
+      "category": "food",
       "shelf_location": "E1",
-      "last_updated": "2023-07-11T00:00:00.000Z",
+      "last_updated": "2023-07-22T03:07:58.471Z",
       "cost_per_unit": 3
     },
     {
@@ -59,11 +59,11 @@
       "id": 1011,
       "name": "Paper Towels",
       "batch_number": "G901",
-      "quantity": 20,
+      "quantity": "21",
       "status": "in-stock",
-      "category": "Household",
+      "category": "food",
       "shelf_location": "G3",
-      "last_updated": "2023-07-09T00:00:00.000Z",
+      "last_updated": "2023-07-22T02:52:36.282Z",
       "cost_per_unit": 1.5
     },
     {
@@ -116,10 +116,10 @@
       "batch_number": "K234",
       "quantity": 200,
       "status": "in-stock",
-      "category": "Fruits",
+      "category": "food",
       "shelf_location": "K4",
-      "last_updated": "2023-07-13T00:00:00.000Z",
-      "cost_per_unit": 0.8
+      "last_updated": "2023-07-22T03:04:45.024Z",
+      "cost_per_unit": "0.9"
     },
     {
       "id": 1016,
@@ -147,11 +147,11 @@
       "id": 1018,
       "name": "Pasta",
       "batch_number": "N123",
-      "quantity": 50,
+      "quantity": "51",
       "status": "in-stock",
       "category": "Pantry",
       "shelf_location": "N2",
-      "last_updated": "2023-07-13T00:00:00.000Z",
+      "last_updated": "2023-07-22T02:56:05.016Z",
       "cost_per_unit": 1.2
     },
     {
@@ -166,157 +166,15 @@
       "cost_per_unit": 0.9
     },
     {
-      "id": 1020
-    },
-    {
-      "id": 1021
-    },
-    {
-      "id": 1022
-    },
-    {
-      "id": 1023
-    },
-    {
-      "id": 1024
-    },
-    {
-      "id": 1025
-    },
-    {
-      "id": 1026
-    },
-    {
-      "id": 1027
-    },
-    {
-      "we up bitches": "",
-      "id": 1028
-    },
-    {
-      "id": 1029
-    },
-    {
-      "data": "works",
-      "id": 1030
-    },
-    {
-      "id": 1031
-    },
-    {
-      "id": 1032
-    },
-    {
-      "id": 1033
-    },
-    {
-      "id": 1034
-    },
-    {
-      "id": 1035
-    },
-    {
-      "id": 1036
-    },
-    {
-      "id": 1037
-    },
-    {
-      "id": 1038
-    },
-    {
-      "id": 1039
-    },
-    {
-      "id": 1040
-    },
-    {
-      "id": 1041
-    },
-    {
-      "name": "a",
-      "batch_number": "a",
-      "quantity": "1",
+      "name": "BIC pens",
+      "batch_number": "B67",
+      "quantity": "1000",
       "status": "in-stock",
       "category": "stationery",
-      "shelf_location": "a",
-      "last_updated": "2023-07-20",
-      "cost_per_unit": "1",
-      "id": 1042
-    },
-    {
-      "name": "b",
-      "batch_number": "b",
-      "quantity": "1",
-      "status": "in-stock",
-      "category": "food",
-      "shelf_location": "b",
-      "last_updated": "2023-07-20",
-      "cost_per_unit": "1",
-      "id": 1043
-    },
-    {
-      "name": "c",
-      "batch_number": "c",
-      "quantity": "1",
-      "status": "in-stock",
-      "category": "cleaning",
-      "shelf_location": "c",
-      "last_updated": "2023-07-20",
-      "cost_per_unit": "1",
-      "id": 1044
-    },
-    {
-      "http://localhost:3000\\inventory\\": "",
-      "id": 1045
-    },
-    {
-      "http://localhost:3000\\inventory\\": "",
-      "id": 1046
-    },
-    {
-      "http://localhost:3000\\inventory\\": "",
-      "id": 1047
-    },
-    {
-      "http://localhost:3000\\inventory\\": "",
-      "id": 1048
-    },
-    {
-      "http://localhost:3000\\inventory\\": "",
-      "id": 1049
-    },
-    {
-      "http://localhost:3000\\inventory\\": "",
-      "id": 1050
-    },
-    {
-      "http://localhost:3000\\inventory\\": "",
-      "id": 1051
-    },
-    {
-      "http://localhost:3000\\inventory\\": "",
-      "id": 1052
-    },
-    {
-      "http://localhost:3000\\inventory\\": "",
-      "id": 1053
-    },
-    {
-      "http://localhost:3000\\inventory\\": "",
-      "id": 1054
-    },
-    {
-      "http://localhost:3000\\inventory\\": "",
-      "id": 1055
-    },
-    {
-      "http://localhost:3000\\inventory\\": "",
-      "id": 1056
-    },
-    {
-      "http://localhost:3000\\inventory\\": "",
-      "id": 1057
+      "shelf_location": "S2",
+      "last_updated": "2023-07-22T02:36:45.691Z",
+      "cost_per_unit": "0.5",
+      "id": 1021
     }
   ]
 }

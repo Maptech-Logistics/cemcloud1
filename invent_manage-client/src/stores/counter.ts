@@ -4,7 +4,6 @@ import { watch } from 'vue';
 interface InventoryItem {
   name: string;
   itemData: string;
-  // change to category later
 }
 
 interface InventoryState {
