@@ -19,15 +19,15 @@ export default {
 .primary-button {
   all: unset;
   width: 100px;
-  height: 30px;
+  /* height: 30px; */
   font-size: 16px;
-  background: transparent;
+  background: var(--background-secondary);
   border: none;
   position: relative;
   color: #f0f0f0;
   cursor: pointer;
   z-index: 1;
-  padding: 10px 20px;
+  padding: 5px 20px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -35,9 +35,10 @@ export default {
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
+  border-radius: 5px;
 }
 
-.primary-button::after,
+/* .primary-button::after,
 .primary-button::before {
   content: '';
   position: absolute;
@@ -63,9 +64,9 @@ export default {
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px);
   border-radius: 50px;
-}
+} */
 
-.primary-button:hover::before {
+/* .primary-button:hover::before {
   transform: translate(5%, 20%);
   width: 110%;
   height: 110%;
@@ -81,5 +82,5 @@ export default {
 .primary-button:active::after {
   transition: 0s;
   transform: translate(0, 5%);
-}
+} */
 </style>

@@ -31,11 +31,8 @@ export default {
 <style lang="scss" scoped>
 section{
   // position: absolute;
-  margin-left: 12rem;
-  display: flex;
-  justify-content: center;
   flex-flow: column;
-  width: 90%;
+  width: 100%;
   height: 100vh;
   .stat__wrapper{
     display: flex;

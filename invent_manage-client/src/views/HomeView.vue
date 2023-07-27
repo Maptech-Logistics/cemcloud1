@@ -21,7 +21,7 @@ const addTitle = "Add Inventory Item"
 <template>
   <main>
     <HeadLine msg="Welcome to the Maptec logistics inventory management dashboard" />
-    <primaryBtn @click="addToggleDialog">Add Item</primaryBtn>
+    <!-- <primaryBtn @click="addToggleDialog">Add Item</primaryBtn> -->
 
   </main>
   <div>
