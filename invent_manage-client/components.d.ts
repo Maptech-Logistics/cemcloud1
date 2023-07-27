@@ -8,8 +8,12 @@ export {}
 declare module 'vue' {
   export interface GlobalComponents {
     AboutView: typeof import('./src/views/AboutView.vue')['default']
+    AddItemForm: typeof import('./src/components/Form/AddItemForm.vue')['default']
     Analytics: typeof import('./src/views/analytics/Analytics.vue')['default']
     AnalyticsIcon: typeof import('./src/components/icons/AnalyticsIcon.vue')['default']
+    BaseForm: typeof import('./src/components/Form/BaseForm.vue')['default']
+    BaseInput: typeof import('./src/components/Form/BaseInput.vue')['default']
+    BaseSelect: typeof import('./src/components/Form/BaseSelect.vue')['default']
     Button: typeof import('./src/components/Buttons/Button.vue')['default']
     Card: typeof import('./src/components/card/Card.vue')['default']
     Chart: typeof import('./src/components/visual-summary/Chart.vue')['default']
@@ -30,6 +34,7 @@ declare module 'vue' {
     LogIn: typeof import('./src/views/auth/LogIn.vue')['default']
     LogoutIcon: typeof import('./src/components/icons/LogoutIcon.vue')['default']
     MenuLinks: typeof import('./src/components/sidebar/MenuLinks.vue')['default']
+    Modal: typeof import('./src/components/modal/Modal.vue')['default']
     OutlineBtn: typeof import('./src/components/Buttons/outlineBtn.vue')['default']
     PrimaryBtn: typeof import('./src/components/Buttons/primaryBtn.vue')['default']
     Profile: typeof import('./src/views/profile/Profile.vue')['default']
@@ -43,5 +48,6 @@ declare module 'vue' {
     SideBar: typeof import('./src/components/sidebar/SideBar.vue')['default']
     SpinnerIcon: typeof import('./src/components/icons/SpinnerIcon.vue')['default']
     Table: typeof import('./src/components/table/Table.vue')['default']
+    UpdateItemForm: typeof import('./src/components/Form/UpdateItemForm.vue')['default']
   }
 }

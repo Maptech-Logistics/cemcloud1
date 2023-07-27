@@ -16,9 +16,9 @@ const extendMenu = () => {
 
 <template lang="">
   <aside :class="`${isExtended ? 'is_extended' : ' '}`">
-    <div class="logo">
+    <!-- <div class="logo">
       <img src="@/assets/logo.png" alt="Vue" />
-    </div>
+    </div> -->
     <div class="toggle__wrapper">
       <button class="toggle" @click="extendMenu">
         <span class="icons">

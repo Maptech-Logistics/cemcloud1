@@ -4,7 +4,6 @@
     <div class="dialog-content">
       <div class="dialog-header">
         <h2 class="dialog-title">{{ title }}</h2>
-        <span>{{ isOpen }}</span>
         <button class="dialog-close" @click="toggleDialog">
           <X color="black" :size="20" />
         </button>
@@ -28,6 +27,7 @@ export default {
 
   methods: {
     toggleDialog(){
+      console.log("emmiting toggle-dialog")
       this.$emit('toggle-dialog')
     }
   },
@@ -58,7 +58,7 @@ export default {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.1);
   z-index: 1;
 }
 

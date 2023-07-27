@@ -1,14 +1,30 @@
 <script setup lang="ts">
 import HeadLine from '@/components/HeadLine.vue'
 import SideBar from '@/components/sidebar/SideBar.vue'
-import Chart from '@/components/visual-summary/Chart.vue'
+import AddItemForm from '@/components/Form/AddItemForm.vue'
+import UpdateItemForm from '@/components/Form/UpdateItemForm.vue'
+import primaryBtn from '@/components/Buttons/primaryBtn.vue'
+import { ref } from 'vue';
+
+
+// const addIsOpen = ref(false)
+
+// const addToggleDialog = () => {
+//   addIsOpen.value = !addIsOpen.value
+// }
+
+// const addTitle = "Add Inventory Item"
+
+
 </script>
 
 <template>
   <main>
-    <div>
-      <HeadLine msg="Welcome to the Maptec logistics inventory management dashboard" />
-      <Chart />
-    </div>
+    <HeadLine msg="Welcome to the Maptec logistics inventory management dashboard" />
+
   </main>
+  <!-- <div>
+
+  </div> -->
+  
 </template>
