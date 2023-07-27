@@ -138,7 +138,7 @@
 
     const selectOptions = ref({
         availabilityStatus: [{"value":"in-stock","text":"In Stock"}, {"value":"out-of-stock", "text":"Out of Stock"}],
-        category: [{"value":"food", "text":"Food"}, {"value":"drinks","text":"Drinks"}, {"value":"stationery", "text":"Stationery"}, {"value":"cleaning", "text":"Cleaning"}, {"value":"other", "text":"Other"}]
+        category: [{"value":"Food", "text":"Food"}, {"value":"Stationery", "text":"Stationery"}, {"value":"Dairy", "text":"Dairy"}, {"value":"Beverages", "text":"Beverages"}, {"value":"Fruits", "text":"Fruits"}, {"value":"Meat", "text":"Meat"},  {"value":"Personal Care", "text":"Personal Care"}, {"value":"Pantry", "text":"Pantry"}, {"value":"Other", "text":"Other"}]
     })
 
     const addButton = async () => {
